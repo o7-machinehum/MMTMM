@@ -1,3 +1,3 @@
-# MMMTMM
+# MMTMM
 
 It's lit.
