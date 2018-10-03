@@ -17,7 +17,7 @@ The purpose of Open-VCM is to create a low cost platform that's highly configura
 ## Architecture
 There are three main sub-modules that can be mixed and matched with each other.
 
-![openVCM](images/OPEN_VCM.jpg)
+<img src="images/OPEN_VCM.jpg" alt="openVCM" width="300"/>
 
 1. Compute, this contains anything that does any signal manipulation. This can be an Arduino, STM32 or analog circuitry.
 2. Interface-IO, this is anything that the user interacts with, be it knobs, buttons, jacks etc... The Compute PCB connects with the Interface-IO pcb using a backplane connector.
