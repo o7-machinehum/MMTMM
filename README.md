@@ -24,14 +24,14 @@ There are three main sub-modules that can be mixed and matched with each other.
 3. Descriptor, this is the front module that bolts to the Interface-IO PCB. It is only mechanically connected and serves to outline what the knobs, jacks and buttons actually do.
 
 ## Backplace connector Signals
-Power ( 7x ):          3x GND, 3v3, 5V, +12V, -12V
-DigitalOutput ( 8x ):  DO0 - DO7
-DigitalInput ( 8x ):   DI0 - DI7
-AnalogOutput ( 1x ):   AO0
-AnalogInput ( 8x ):    AI0 - AI7
-SWD (3x):
-USB (2x):
-Bootload PB (1x):
+- Power ( 7x ):           3x GND, 3v3, 5V, +12V, -12V
+- DigitalInputs ( 8x )
+- DigitalOutput ( 8x ):   DO0 - DO7
+- AnalogOutput ( 16x ):   AO0
+- AnalogInput ( 16x ):    AI0 - AI7
+- SWD (3x):
+- USB (2x):
+- Bootload PB (1x):
 
 ## Signal Description
 The compute PCB is responsible for conditioning all signal to a reasonable level. This is done so the compute PCB can be swapped out for a pure analog PCB in the event the user might wish to build an analog module. All inputs to the compute PCB can handle a full +-12V swing. All outputs are standardised such that they will interface with "normal" eurorack modules.
@@ -39,13 +39,13 @@ The compute PCB is responsible for conditioning all signal to a reasonable level
 - Power 
   - As outlined. Shrouded power header on compute PCB. 
 - DigitalOutput 
-  - 0-5V coming from compute PCB. Conditioned up by the compute PCB.
+  - Signal protocol not defined. 
 - DigitalInput
-  - 0-5V coming from IO pcb. Conditioned down to 3.3V by compute PCB.
+  - Signal protocol not defined. 
 - AnalogOutput
-  - +-5V coming from compute PCB. Conditioned up by compute PCB.
+  - +-10V from compute PCB. Conditioned up by compute PCB.
 - AnalogInput
-  - +- coming from IO pcb. Conditioned down to 3.3V by compute PCB.
+  - +-10V coming from IO pcb. Conditioned down to 3.3V by compute PCB.
 
 ## MVM ( Minimum viable module )
 This is an example of a very low cost configuration that has the highest flexibility. A user could build 5+ of these and change the firmware on each module resulting in a 5 completely different modules.
