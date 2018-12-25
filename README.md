@@ -5,6 +5,11 @@ It's lit.
 # Open-VCM ( Very Configurable Module )
 The purpose of Open-VCM is to create a low cost platform that's highly configurable. There are three sub-modules that go into the entire module. User can switch them out independently to make entirely different modules.
 
+## Things to think about
+- Maybe add LEDs to the spec rather than just digital out
+  - TLC59281
+- Maybe use 1mm pitch headers rather than 2.54mm
+
 ## Requirements
 - Affordable
 - Ease of use
