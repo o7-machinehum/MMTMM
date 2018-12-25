@@ -63,7 +63,7 @@ This is an example of a very low cost configuration that has the highest flexibi
   - 1x DAC
     - AO.0 -> JO.0
   - GPIO Input
-    - B0:3 -> DI.0:3
+    - DI.0:3 -> B0:3
     - DI.4:8 -> JI.8:11
   - GPIO Output
     - DO.0:6 -> J0.1:7
