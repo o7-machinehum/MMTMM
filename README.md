@@ -99,4 +99,5 @@ This is an example of a very low cost configuration that has the highest flexibi
 - LM324ADR: Opamp
 - 74LVC125AS14-13: Buffer
 - STM32F373CCT6: This is a nice part
+  - STM32F373VCT6
 - R-78E3.3-0.5: Power Supply.
