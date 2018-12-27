@@ -21,7 +21,7 @@ F0 "MCU" 50
 F1 "MCU.sch" 50
 $EndSheet
 $Sheet
-S 5400 1600 1300 1050
+S 1200 1500 1300 1050
 U 5C243B4D
 F0 "Power" 50
 F1 "Power.sch" 50
