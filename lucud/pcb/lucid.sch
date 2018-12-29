@@ -1,0 +1,109 @@
+EESchema Schematic File Version 4
+LIBS:lucid-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 3400 750  1250 2500
+U 5C243A21
+F0 "MCU" 50
+F1 "MCU.sch" 50
+$EndSheet
+$Sheet
+S 1200 1500 1300 1050
+U 5C243B4D
+F0 "Power" 50
+F1 "Power.sch" 50
+$EndSheet
+$Comp
+L Connector_Generic:Conn_02x30_Odd_Even J2
+U 1 1 5C255323
+P 1650 5300
+F 0 "J2" H 1950 6950 50  0000 C CNN
+F 1 "Conn_02x30_Odd_Even" H 2000 6850 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x30_P2.54mm_Vertical" H 1650 5300 50  0001 C CNN
+F 3 "~" H 1650 5300 50  0001 C CNN
+	1    1650 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0102
+U 1 1 5C259E2B
+P 1400 3600
+F 0 "#PWR0102" H 1400 3450 50  0001 C CNN
+F 1 "+3V3" H 1415 3773 50  0000 C CNN
+F 2 "" H 1400 3600 50  0001 C CNN
+F 3 "" H 1400 3600 50  0001 C CNN
+	1    1400 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 3600 1400 3900
+Wire Wire Line
+	1400 3900 1450 3900
+Wire Wire Line
+	1450 4000 1200 4000
+Wire Wire Line
+	1200 4000 1200 3600
+Wire Wire Line
+	1450 4100 1000 4100
+Wire Wire Line
+	1000 4100 1000 3600
+Wire Wire Line
+	1950 3900 2450 3900
+Wire Wire Line
+	2450 3900 2450 3950
+$Comp
+L power:+12V #PWR0103
+U 1 1 5C259F63
+P 1200 3600
+F 0 "#PWR0103" H 1200 3450 50  0001 C CNN
+F 1 "+12V" H 1215 3773 50  0000 C CNN
+F 2 "" H 1200 3600 50  0001 C CNN
+F 3 "" H 1200 3600 50  0001 C CNN
+	1    1200 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-12V #PWR0104
+U 1 1 5C259FC7
+P 1000 3600
+F 0 "#PWR0104" H 1000 3700 50  0001 C CNN
+F 1 "-12V" H 1015 3773 50  0000 C CNN
+F 2 "" H 1000 3600 50  0001 C CNN
+F 3 "" H 1000 3600 50  0001 C CNN
+	1    1000 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5C25A12F
+P 2450 3950
+F 0 "#PWR0105" H 2450 3700 50  0001 C CNN
+F 1 "GND" H 2455 3777 50  0000 C CNN
+F 2 "" H 2450 3950 50  0001 C CNN
+F 3 "" H 2450 3950 50  0001 C CNN
+	1    2450 3950
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 3150 4000 700  1550
+U 5C2657C1
+F0 "Buffer" 50
+F1 "Buffer.sch" 50
+F2 "DI.0" I L 3150 4200 50 
+$EndSheet
+Wire Wire Line
+	1950 4200 3150 4200
+$EndSCHEMATC

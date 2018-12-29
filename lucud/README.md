@@ -31,14 +31,15 @@ There are three main sub-modules that can be mixed and matched with each other.
 ## Backplace connector Signals
 - Power ( 6x )
   - 3v3, 5v, +12V, -12V, GND, GND
-- DigitalInputs ( 8x )
-  - DI.0:7
-- DigitalOutput ( 8x )
-  - DO.0:7
-- AnalogOutput ( 16x )
-  - AO.0:15
-- AnalogInput ( 16x )
-  - AI.0:15
+- Outputs ( 16x )
+  - O.0:15
+- Inputs ( 16x )
+  - I.0:15
+- Buttons ( 8x )
+  - B.0:7
+  - Just pull to GND
+- LEDs ( 8x )
+  - D.0:7
 - SWD ( 3x )
 - UART ( 2x )
 - USB ( 2x )
@@ -50,13 +51,9 @@ The compute PCB is responsible for conditioning all signal to a reasonable level
 
 - Power 
   - As outlined. Shrouded power header on compute PCB. 
-- DigitalOutput 
-  - 0-5V From compute PCB.
-- DigitalInput
-  - 0-5V From IO PCB.
-- AnalogOutput
+- Output
   - +-10V from compute PCB.
-- AnalogInput
+- Input
   - +-10V coming from IO pcb.
 
 ## MVM ( Minimum viable module )
@@ -64,14 +61,14 @@ This is an example of a very low cost configuration that has the highest flexibi
 
 - Compute Module (Arduino / STM32)
   - 8x ADC
-    - AI.0:7 - JI.0:7
+    - I.0:7 - JI.0:7
   - 1x DAC
-    - AO.0 -> JO.0
+    - O.0 -> JO.0
   - GPIO Input
-    - DI.0:3 -> B0:3
-    - DI.4:8 -> JI.8:11
+    - I.0:3 -> B0:3
+    - I.4:8 -> JI.8:11
   - GPIO Output
-    - DO.0:6 -> J0.1:7
+    - O.0:6 -> J0.1:7
       
 - IO Module
   - 8x Output Jacks: JO.0:7
