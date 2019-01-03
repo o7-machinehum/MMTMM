@@ -1,0 +1,435 @@
+EESchema Schematic File Version 4
+LIBS:lucid-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 5
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L 74xx:74LVC125 U3
+U 1 1 5C2BC14E
+P 4950 2850
+F 0 "U3" H 4950 3167 50  0000 C CNN
+F 1 "74LVC125" H 4950 3076 50  0000 C CNN
+F 2 "" H 4950 2850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 4950 2850 50  0001 C CNN
+	1    4950 2850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U3
+U 2 1 5C2BC1B2
+P 4950 3600
+F 0 "U3" H 4950 3917 50  0000 C CNN
+F 1 "74LVC125" H 4950 3826 50  0000 C CNN
+F 2 "" H 4950 3600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 4950 3600 50  0001 C CNN
+	2    4950 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U3
+U 3 1 5C2BC1F7
+P 4950 4350
+F 0 "U3" H 4950 4667 50  0000 C CNN
+F 1 "74LVC125" H 4950 4576 50  0000 C CNN
+F 2 "" H 4950 4350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 4950 4350 50  0001 C CNN
+	3    4950 4350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U3
+U 4 1 5C2BC23F
+P 4950 5100
+F 0 "U3" H 4950 5417 50  0000 C CNN
+F 1 "74LVC125" H 4950 5326 50  0000 C CNN
+F 2 "" H 4950 5100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 4950 5100 50  0001 C CNN
+	4    4950 5100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U3
+U 5 1 5C2BC2B6
+P 1400 1650
+F 0 "U3" H 1630 1696 50  0000 L CNN
+F 1 "74LVC125" H 1630 1605 50  0000 L CNN
+F 2 "" H 1400 1650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 1400 1650 50  0001 C CNN
+	5    1400 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U4
+U 1 1 5C2BC659
+P 7400 2800
+F 0 "U4" H 7400 3117 50  0000 C CNN
+F 1 "74LVC125" H 7400 3026 50  0000 C CNN
+F 2 "" H 7400 2800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 7400 2800 50  0001 C CNN
+	1    7400 2800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U4
+U 2 1 5C2BC660
+P 7400 3550
+F 0 "U4" H 7400 3867 50  0000 C CNN
+F 1 "74LVC125" H 7400 3776 50  0000 C CNN
+F 2 "" H 7400 3550 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 7400 3550 50  0001 C CNN
+	2    7400 3550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U4
+U 3 1 5C2BC667
+P 7400 4300
+F 0 "U4" H 7400 4617 50  0000 C CNN
+F 1 "74LVC125" H 7400 4526 50  0000 C CNN
+F 2 "" H 7400 4300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 7400 4300 50  0001 C CNN
+	3    7400 4300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U4
+U 4 1 5C2BC66E
+P 7400 5050
+F 0 "U4" H 7400 5367 50  0000 C CNN
+F 1 "74LVC125" H 7400 5276 50  0000 C CNN
+F 2 "" H 7400 5050 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 7400 5050 50  0001 C CNN
+	4    7400 5050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LVC125 U4
+U 5 1 5C2D3E94
+P 2900 1650
+F 0 "U4" H 3130 1696 50  0000 L CNN
+F 1 "74LVC125" H 3130 1605 50  0000 L CNN
+F 2 "" H 2900 1650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LVC125" H 2900 1650 50  0001 C CNN
+	5    2900 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 1150 1400 1000
+Wire Wire Line
+	2900 1150 2900 1000
+$Comp
+L power:+5V #PWR022
+U 1 1 5C2D4694
+P 1400 800
+F 0 "#PWR022" H 1400 650 50  0001 C CNN
+F 1 "+5V" H 1415 973 50  0000 C CNN
+F 2 "" H 1400 800 50  0001 C CNN
+F 3 "" H 1400 800 50  0001 C CNN
+	1    1400 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR024
+U 1 1 5C2D46DC
+P 2900 800
+F 0 "#PWR024" H 2900 650 50  0001 C CNN
+F 1 "+5V" H 2915 973 50  0000 C CNN
+F 2 "" H 2900 800 50  0001 C CNN
+F 3 "" H 2900 800 50  0001 C CNN
+	1    2900 800 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 2150 1400 2250
+Wire Wire Line
+	2900 2150 2900 2250
+$Comp
+L power:GND #PWR023
+U 1 1 5C2D47CE
+P 1400 2400
+F 0 "#PWR023" H 1400 2150 50  0001 C CNN
+F 1 "GND" H 1405 2227 50  0000 C CNN
+F 2 "" H 1400 2400 50  0001 C CNN
+F 3 "" H 1400 2400 50  0001 C CNN
+	1    1400 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR025
+U 1 1 5C2D484D
+P 2900 2400
+F 0 "#PWR025" H 2900 2150 50  0001 C CNN
+F 1 "GND" H 2905 2227 50  0000 C CNN
+F 2 "" H 2900 2400 50  0001 C CNN
+F 3 "" H 2900 2400 50  0001 C CNN
+	1    2900 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 5C2D4CC2
+P 950 1650
+AR Path="/5C243B4D/5C2D4CC2" Ref="C?"  Part="1" 
+AR Path="/5C243A21/5C2D4CC2" Ref="C?"  Part="1" 
+AR Path="/5C2A4ADA/5C2D4CC2" Ref="C12"  Part="1" 
+F 0 "C12" V 650 1500 50  0000 L CNN
+F 1 "1uF 6.3V" V 750 1500 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 950 1650 50  0001 C CNN
+F 3 "~" H 950 1650 50  0001 C CNN
+	1    950  1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 5C2D4F6E
+P 2450 1650
+AR Path="/5C243B4D/5C2D4F6E" Ref="C?"  Part="1" 
+AR Path="/5C243A21/5C2D4F6E" Ref="C?"  Part="1" 
+AR Path="/5C2A4ADA/5C2D4F6E" Ref="C13"  Part="1" 
+F 0 "C13" V 2150 1500 50  0000 L CNN
+F 1 "1uF 6.3V" V 2250 1500 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2450 1650 50  0001 C CNN
+F 3 "~" H 2450 1650 50  0001 C CNN
+	1    2450 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 1400 2450 1000
+Wire Wire Line
+	2450 1000 2900 1000
+Connection ~ 2900 1000
+Wire Wire Line
+	2900 1000 2900 800 
+Wire Wire Line
+	2450 1900 2450 2250
+Wire Wire Line
+	2450 2250 2900 2250
+Connection ~ 2900 2250
+Wire Wire Line
+	2900 2250 2900 2400
+Wire Wire Line
+	950  1400 950  1000
+Wire Wire Line
+	950  1000 1400 1000
+Connection ~ 1400 1000
+Wire Wire Line
+	1400 1000 1400 800 
+Wire Wire Line
+	950  1900 950  2250
+Wire Wire Line
+	950  2250 1400 2250
+Connection ~ 1400 2250
+Wire Wire Line
+	1400 2250 1400 2400
+Wire Wire Line
+	5250 2850 5450 2850
+Text HLabel 5450 2850 2    50   Input ~ 0
+O.1
+Wire Wire Line
+	4650 2850 4450 2850
+Text HLabel 4450 2850 0    50   Input ~ 0
+O.1_buff
+Text HLabel 5450 3600 2    50   Input ~ 0
+O.2
+Text HLabel 4450 3600 0    50   Input ~ 0
+O.2_buff
+Wire Wire Line
+	4650 3600 4450 3600
+Wire Wire Line
+	5250 3600 5450 3600
+Text HLabel 5450 4350 2    50   Input ~ 0
+O.3
+Text HLabel 4450 4350 0    50   Input ~ 0
+O.3_buff
+Wire Wire Line
+	4650 4350 4450 4350
+Wire Wire Line
+	5250 4350 5450 4350
+Text HLabel 5450 5100 2    50   Input ~ 0
+O.4
+Text HLabel 4450 5100 0    50   Input ~ 0
+O.4_buff
+Wire Wire Line
+	4650 5100 4450 5100
+Wire Wire Line
+	5250 5100 5450 5100
+Text HLabel 7900 2800 2    50   Input ~ 0
+O.5
+Text HLabel 6900 2800 0    50   Input ~ 0
+O.5_buff
+Wire Wire Line
+	7100 2800 6900 2800
+Wire Wire Line
+	7700 2800 7900 2800
+Text HLabel 7900 3550 2    50   Input ~ 0
+O.6
+Text HLabel 6900 3550 0    50   Input ~ 0
+O.6_buff
+Wire Wire Line
+	7100 3550 6900 3550
+Wire Wire Line
+	7700 3550 7900 3550
+Text HLabel 7900 4300 2    50   Input ~ 0
+O.7
+Text HLabel 6900 4300 0    50   Input ~ 0
+O.7_buff
+Wire Wire Line
+	7100 4300 6900 4300
+Wire Wire Line
+	7700 4300 7900 4300
+Text HLabel 7900 5050 2    50   Input ~ 0
+O.8
+Text HLabel 6900 5050 0    50   Input ~ 0
+O.8_buff
+Wire Wire Line
+	7100 5050 6900 5050
+Wire Wire Line
+	7700 5050 7900 5050
+Wire Wire Line
+	4950 3100 4950 3200
+Wire Wire Line
+	4950 3200 4300 3200
+Wire Wire Line
+	4300 3200 4300 3150
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2DE760
+P 4300 3150
+F 0 "#PWR?" H 4300 3000 50  0001 C CNN
+F 1 "+5V" H 4315 3323 50  0000 C CNN
+F 2 "" H 4300 3150 50  0001 C CNN
+F 3 "" H 4300 3150 50  0001 C CNN
+	1    4300 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 3850 4950 3950
+Wire Wire Line
+	4950 3950 4300 3950
+Wire Wire Line
+	4300 3950 4300 3900
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2DF648
+P 4300 3900
+F 0 "#PWR?" H 4300 3750 50  0001 C CNN
+F 1 "+5V" H 4315 4073 50  0000 C CNN
+F 2 "" H 4300 3900 50  0001 C CNN
+F 3 "" H 4300 3900 50  0001 C CNN
+	1    4300 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 4600 4950 4700
+Wire Wire Line
+	4950 4700 4300 4700
+Wire Wire Line
+	4300 4700 4300 4650
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2E01A8
+P 4300 4650
+F 0 "#PWR?" H 4300 4500 50  0001 C CNN
+F 1 "+5V" H 4315 4823 50  0000 C CNN
+F 2 "" H 4300 4650 50  0001 C CNN
+F 3 "" H 4300 4650 50  0001 C CNN
+	1    4300 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 3050 7400 3150
+Wire Wire Line
+	7400 3150 6750 3150
+Wire Wire Line
+	6750 3150 6750 3100
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2E07C3
+P 6750 3100
+F 0 "#PWR?" H 6750 2950 50  0001 C CNN
+F 1 "+5V" H 6765 3273 50  0000 C CNN
+F 2 "" H 6750 3100 50  0001 C CNN
+F 3 "" H 6750 3100 50  0001 C CNN
+	1    6750 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 3800 7400 3900
+Wire Wire Line
+	7400 3900 6750 3900
+Wire Wire Line
+	6750 3900 6750 3850
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2E1E78
+P 6750 3850
+F 0 "#PWR?" H 6750 3700 50  0001 C CNN
+F 1 "+5V" H 6765 4023 50  0000 C CNN
+F 2 "" H 6750 3850 50  0001 C CNN
+F 3 "" H 6750 3850 50  0001 C CNN
+	1    6750 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 4550 7400 4650
+Wire Wire Line
+	7400 4650 6750 4650
+Wire Wire Line
+	6750 4650 6750 4600
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2E26CF
+P 6750 4600
+F 0 "#PWR?" H 6750 4450 50  0001 C CNN
+F 1 "+5V" H 6765 4773 50  0000 C CNN
+F 2 "" H 6750 4600 50  0001 C CNN
+F 3 "" H 6750 4600 50  0001 C CNN
+	1    6750 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 5300 7400 5400
+Wire Wire Line
+	7400 5400 6750 5400
+Wire Wire Line
+	6750 5400 6750 5350
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2E2F99
+P 6750 5350
+F 0 "#PWR?" H 6750 5200 50  0001 C CNN
+F 1 "+5V" H 6765 5523 50  0000 C CNN
+F 2 "" H 6750 5350 50  0001 C CNN
+F 3 "" H 6750 5350 50  0001 C CNN
+	1    6750 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 5350 4950 5450
+Wire Wire Line
+	4950 5450 4300 5450
+Wire Wire Line
+	4300 5450 4300 5400
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2E396C
+P 4300 5400
+F 0 "#PWR?" H 4300 5250 50  0001 C CNN
+F 1 "+5V" H 4315 5573 50  0000 C CNN
+F 2 "" H 4300 5400 50  0001 C CNN
+F 3 "" H 4300 5400 50  0001 C CNN
+	1    4300 5400
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
