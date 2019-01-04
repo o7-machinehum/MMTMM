@@ -335,4 +335,60 @@ F 3 "" H 7450 2850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7450 2850 7450 2800
+Text Label 3600 1650 0    50   ~ 0
+nRST
+Text Label 5850 3250 0    50   ~ 0
+SWD_CLK
+Text Label 5850 3150 0    50   ~ 0
+SWD_DAT
+Text Label 800  3500 0    50   ~ 0
+USB_D+
+Text Label 800  3400 0    50   ~ 0
+USB_D-
+Text Label 800  3300 0    50   ~ 0
+BOOT_PB
+Wire Wire Line
+	5800 3150 6250 3150
+Text HLabel 6250 3150 2    50   Input ~ 0
+SWD_DAT
+Wire Wire Line
+	3600 1650 4000 1650
+Text HLabel 3600 1650 0    50   Input ~ 0
+nRST
+Wire Wire Line
+	5800 3250 6250 3250
+Text HLabel 6250 3250 2    50   Input ~ 0
+SWD_CLK
+Text HLabel 6250 1850 2    50   Input ~ 0
+AI.0
+Text HLabel 6250 1950 2    50   Input ~ 0
+AI.1
+Text HLabel 6250 2050 2    50   Input ~ 0
+AI.2
+Text HLabel 6250 2150 2    50   Input ~ 0
+AI.3
+Text HLabel 6250 2250 2    50   Input ~ 0
+AI.4
+Text HLabel 6250 2350 2    50   Input ~ 0
+AI.5
+Text HLabel 6250 2450 2    50   Input ~ 0
+AI.6
+Text HLabel 6250 2550 2    50   Input ~ 0
+AI.7
+Wire Wire Line
+	6250 1850 5800 1850
+Wire Wire Line
+	6250 1950 5800 1950
+Wire Wire Line
+	5800 2050 6250 2050
+Wire Wire Line
+	6250 2150 5800 2150
+Wire Wire Line
+	5800 2250 6250 2250
+Wire Wire Line
+	6250 2350 5800 2350
+Wire Wire Line
+	5800 2450 6250 2450
+Wire Wire Line
+	6250 2550 5800 2550
 $EndSCHEMATC
