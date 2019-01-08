@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# 74xx:74LVC125
+# 74xx_74LVC125
 #
-DEF 74xx:74LVC125 U 0 40 Y Y 5 L N
+DEF 74xx_74LVC125 U 0 40 Y Y 5 L N
 F0 "U" 0 50 50 H V C CNN
-F1 "74xx:74LVC125" 0 -50 50 H V C CNN
+F1 "74xx_74LVC125" 0 -50 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 ALIAS 74LVC125
@@ -35,11 +35,11 @@ X GND 7 0 -500 200 U 50 50 5 0 W
 ENDDRAW
 ENDDEF
 #
-# Connector_Generic:Conn_02x05_Odd_Even
+# Connector_Generic_Conn_02x05_Odd_Even
 #
-DEF Connector_Generic:Conn_02x05_Odd_Even J 0 40 Y N 1 F N
+DEF Connector_Generic_Conn_02x05_Odd_Even J 0 40 Y N 1 F N
 F0 "J" 50 300 50 H V C CNN
-F1 "Connector_Generic:Conn_02x05_Odd_Even" 50 -300 50 H V C CNN
+F1 "Connector_Generic_Conn_02x05_Odd_Even" 50 -300 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -70,11 +70,11 @@ X Pin_9 9 -200 -200 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_Generic:Conn_02x30_Odd_Even
+# Connector_Generic_Conn_02x30_Odd_Even
 #
-DEF Connector_Generic:Conn_02x30_Odd_Even J 0 40 Y N 1 F N
+DEF Connector_Generic_Conn_02x30_Odd_Even J 0 40 Y N 1 F N
 F0 "J" 50 1500 50 H V C CNN
-F1 "Connector_Generic:Conn_02x30_Odd_Even" 50 -1600 50 H V C CNN
+F1 "Connector_Generic_Conn_02x30_Odd_Even" 50 -1600 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -205,11 +205,11 @@ X Pin_9 9 -200 1000 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# MCU_ST_STM32F3:STM32F373VCTx
+# MCU_ST_STM32F3_STM32F373VCTx
 #
-DEF MCU_ST_STM32F3:STM32F373VCTx U 0 20 Y Y 1 F N
+DEF MCU_ST_STM32F3_STM32F373VCTx U 0 20 Y Y 1 F N
 F0 "U" -700 2550 50 H V L CNN
-F1 "MCU_ST_STM32F3:STM32F373VCTx" 500 2550 50 H V L CNN
+F1 "MCU_ST_STM32F3_STM32F373VCTx" 500 2550 50 H V L CNN
 F2 "Package_QFP:LQFP-100_14x14mm_P0.5mm" -700 -2500 50 H I R CNN
 F3 "" 0 0 50 H I C CNN
 ALIAS STM32F373VBTx STM32F373VCTx
@@ -321,11 +321,11 @@ X VSS 99 0 -2700 200 U 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
-# Regulator_Switching:R-78E3.3-0.5
+# Regulator_Switching_R-78E3.3-0.5
 #
-DEF Regulator_Switching:R-78E3.3-0.5 U 0 10 Y Y 1 F N
+DEF Regulator_Switching_R-78E3.3-0.5 U 0 10 Y Y 1 F N
 F0 "U" -150 125 50 H V C CNN
-F1 "Regulator_Switching:R-78E3.3-0.5" 0 125 50 H V L CNN
+F1 "Regulator_Switching_R-78E3.3-0.5" 0 125 50 H V L CNN
 F2 "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT" 50 -250 50 H I L CIN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -339,11 +339,11 @@ X OUT 3 300 0 100 L 50 50 1 1 w
 ENDDRAW
 ENDDEF
 #
-# Regulator_Switching:R-78E5.0-0.5
+# Regulator_Switching_R-78E5.0-0.5
 #
-DEF Regulator_Switching:R-78E5.0-0.5 U 0 10 Y Y 1 F N
+DEF Regulator_Switching_R-78E5.0-0.5 U 0 10 Y Y 1 F N
 F0 "U" -150 125 50 H V C CNN
-F1 "Regulator_Switching:R-78E5.0-0.5" 0 125 50 H V L CNN
+F1 "Regulator_Switching_R-78E5.0-0.5" 0 125 50 H V L CNN
 F2 "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT" 50 -250 50 H I L CIN
 F3 "" 0 0 50 H I C CNN
 ALIAS R-78E3.3-0.5 R-78E9.0-0.5 R-78E12-0.5 R-78E15-0.5 R-78E5.0-1.0 R-78E3.3-1.0 R-78C1.8-1.0 R-78C5.0-1.0 R-78C3.3-1.0 R-78C9.0-1.0 R-78C12-1.0 R-78C15-1.0 R-781.8-1.0 R-782.5-1.0 R-783.3-1.0 R-785.0-1.0 R-781.5-0.5 R-781.8-0.5 R-782.5-0.5 R-783.3-0.5 R-785.0-0.5 R-786.5-0.5 R-7812-0.5 R-7815-0.5
@@ -358,11 +358,11 @@ X OUT 3 300 0 100 L 50 50 1 1 w
 ENDDRAW
 ENDDEF
 #
-# power:+12V
+# power_+12V
 #
-DEF power:+12V #PWR 0 0 Y Y 1 F P
+DEF power_+12V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "power:+12V" 0 140 50 H V C CNN
+F1 "power_+12V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -373,11 +373,11 @@ X +12V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# power:+3.3V
+# power_+3.3V
 #
-DEF power:+3.3V #PWR 0 0 Y Y 1 F P
+DEF power_+3.3V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "power:+3.3V" 0 140 50 H V C CNN
+F1 "power_+3.3V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 ALIAS +3.3V
@@ -389,11 +389,11 @@ X +3V3 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# power:+3V3
+# power_+3V3
 #
-DEF power:+3V3 #PWR 0 0 Y Y 1 F P
+DEF power_+3V3 #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "power:+3V3" 0 140 50 H V C CNN
+F1 "power_+3V3" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -404,11 +404,11 @@ X +3V3 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# power:+5V
+# power_+5V
 #
-DEF power:+5V #PWR 0 0 Y Y 1 F P
+DEF power_+5V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "power:+5V" 0 140 50 H V C CNN
+F1 "power_+5V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -419,11 +419,11 @@ X +5V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# power:-12V
+# power_-12V
 #
-DEF power:-12V #PWR 0 0 Y Y 1 F P
+DEF power_-12V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 100 50 H I C CNN
-F1 "power:-12V" 0 150 50 H V C CNN
+F1 "power_-12V" 0 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -432,11 +432,11 @@ X -12V 1 0 0 0 U 50 50 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# power:GND
+# power_GND
 #
-DEF power:GND #PWR 0 0 Y Y 1 F P
+DEF power_GND #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "power:GND" 0 -150 50 H V C CNN
+F1 "power_GND" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -445,11 +445,11 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# pspice:CAP
+# pspice_CAP
 #
-DEF pspice:CAP C 0 10 Y Y 1 F N
+DEF pspice_CAP C 0 10 Y Y 1 F N
 F0 "C" 100 150 50 V V C CNN
-F1 "pspice:CAP" 100 -150 50 V V C CNN
+F1 "pspice_CAP" 100 -150 50 V V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 ALIAS C
