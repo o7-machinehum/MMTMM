@@ -35,8 +35,8 @@ There are three main sub-modules that can be mixed and matched with each other.
   - O.0:15
 - Inputs ( 16x )
   - I.0:15
-- Buttons ( 8x )
-  - B.0:7
+- Buttons ( 4x )
+  - B.0:3
   - Just pull to GND
 - LEDs ( 8x )
   - D.0:7
@@ -59,29 +59,29 @@ The compute PCB is responsible for conditioning all signal to a reasonable level
 ## MVM ( Minimum viable module )
 This is an example of a very low cost configuration that has the highest flexibility. A user could build 5+ of these and change the firmware on each module resulting in a 5 completely different modules.
 
-- Compute Module (Arduino / STM32)
-  - 8x ADC
-    - I.0:7 - JI.0:7
-  - 1x DAC
-    - O.0 -> JO.0
-  - GPIO Input
-    - I.0:3 -> B0:3
-    - I.4:8 -> JI.8:11
-  - GPIO Output
-    - O.0:6 -> J0.1:7
-      
 - IO Module
-  - 8x Output Jacks: JO.0:7
-    - In parallel with LEDs
+  - 4x Output Jacks: JO.0:3
     - Lined at the top, apposing JI jacks.
-  - 12x Input Jacks: JI.0:11
+  - 8x Input Jacks: JI.0:7
     - In parallel with static offset pots 
-    - 8x lined on the top, while four are elsewhere.
+    - 4x lined on the top, while four are elsewhere.
   - 4x Buttons
     - B0:3
   - Reset Button
     - B4
   - Headers for USB / SWD
+
+- Compute Module (Arduino / STM32)
+  - 4x ADC
+    - I.0:3 - JI.0:3
+  - 4x DAC
+    - O.0:3 -> JO.0:3
+  - GPIO Input
+    - I.4:8 -> JI.4:8
+  - GPIO Output
+    - O.4:8 -> J0.4:8
+  - Buttons
+    - PB0:PB3 -> B0:3
 
 - Applications
   - VCO
