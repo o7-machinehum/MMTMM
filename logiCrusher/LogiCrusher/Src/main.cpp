@@ -2,6 +2,7 @@
 #include "cmsis_os.h"
 
 ADC_HandleTypeDef hadc1;
+TIM_HandleTypeDef htim2;
 
 osThreadId defaultTaskHandle;
 
