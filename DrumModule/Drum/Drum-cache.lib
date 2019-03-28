@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# 74xx:74HC74
+# 74xx_74HC74
 #
-DEF 74xx:74HC74 U 0 40 Y Y 3 L N
+DEF 74xx_74HC74 U 0 40 Y Y 3 L N
 F0 "U" -300 350 50 H V C CNN
-F1 "74xx:74HC74" -300 -350 50 H V C CNN
+F1 "74xx_74HC74" -300 -350 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 ALIAS 74HC74
@@ -33,11 +33,11 @@ X GND 7 0 -400 100 U 50 50 3 0 W
 ENDDRAW
 ENDDEF
 #
-# Connector:Barrel_Jack_Switch
+# Connector_Barrel_Jack_Switch
 #
-DEF Connector:Barrel_Jack_Switch J 0 20 Y N 1 F N
+DEF Connector_Barrel_Jack_Switch J 0 20 Y N 1 F N
 F0 "J" 0 210 50 H V C CNN
-F1 "Connector:Barrel_Jack_Switch" 0 -200 50 H V C CNN
+F1 "Connector_Barrel_Jack_Switch" 0 -200 50 H V C CNN
 F2 "" 50 -40 50 H I C CNN
 F3 "" 50 -40 50 H I C CNN
 $FPLIST
@@ -58,11 +58,11 @@ X ~ 3 300 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_Generic:Conn_02x05_Odd_Even
+# Connector_Generic_Conn_02x05_Odd_Even
 #
-DEF Connector_Generic:Conn_02x05_Odd_Even J 0 40 Y N 1 F N
+DEF Connector_Generic_Conn_02x05_Odd_Even J 0 40 Y N 1 F N
 F0 "J" 50 300 50 H V C CNN
-F1 "Connector_Generic:Conn_02x05_Odd_Even" 50 -300 50 H V C CNN
+F1 "Connector_Generic_Conn_02x05_Odd_Even" 50 -300 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -93,11 +93,11 @@ X Pin_9 9 -200 -200 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:CP1
+# Device_CP1
 #
-DEF Device:CP1 C 0 10 N N 1 F N
+DEF Device_CP1 C 0 10 N N 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "Device:CP1" 25 -100 50 H V L CNN
+F1 "Device_CP1" 25 -100 50 H V L CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -113,11 +113,11 @@ X ~ 2 0 -150 130 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:C_Small
+# Device_C_Small
 #
-DEF Device:C_Small C 0 10 N N 1 F N
+DEF Device_C_Small C 0 10 N N 1 F N
 F0 "C" 10 70 50 H V L CNN
-F1 "Device:C_Small" 10 -80 50 H V L CNN
+F1 "Device_C_Small" 10 -80 50 H V L CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -131,11 +131,11 @@ X ~ 2 0 -100 80 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:Opamp_Dual_Generic
+# Device_Opamp_Dual_Generic
 #
-DEF Device:Opamp_Dual_Generic U 0 20 Y Y 3 F N
+DEF Device_Opamp_Dual_Generic U 0 20 Y Y 3 F N
 F0 "U" 0 200 50 H V L CNN
-F1 "Device:Opamp_Dual_Generic" 0 -200 50 H V L CNN
+F1 "Device_Opamp_Dual_Generic" 0 -200 50 H V L CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -161,11 +161,11 @@ X V+ 8 -100 300 150 D 50 50 3 1 W
 ENDDRAW
 ENDDEF
 #
-# Device:R_POT_US
+# Device_R_POT_US
 #
-DEF Device:R_POT_US RV 0 40 Y N 1 F N
+DEF Device_R_POT_US RV 0 40 Y N 1 F N
 F0 "RV" -175 0 50 V V C CNN
-F1 "Device:R_POT_US" -100 0 50 V V C CNN
+F1 "Device_R_POT_US" -100 0 50 V V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -175,7 +175,7 @@ DRAW
 P 2 0 1 0 0 -90 0 -100 N
 P 2 0 1 0 0 100 0 90 N
 P 2 0 1 0 100 0 60 0 N
-P 3 0 1 0 45 0 90 20 90 -20 F
+P 4 0 1 0 45 0 90 20 90 -20 45 0 F
 P 5 0 1 0 0 -30 40 -45 0 -60 -40 -75 0 -90 N
 P 5 0 1 0 0 30 40 15 0 0 -40 -15 0 -30 N
 P 5 0 1 0 0 90 40 75 0 60 -40 45 0 30 N
@@ -185,11 +185,11 @@ X 3 3 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device:R_US
+# Device_R_US
 #
-DEF Device:R_US R 0 0 N Y 1 F N
+DEF Device_R_US R 0 0 N Y 1 F N
 F0 "R" 100 0 50 V V C CNN
-F1 "Device:R_US" -100 0 50 V V C CNN
+F1 "Device_R_US" -100 0 50 V V C CNN
 F2 "" 40 -10 50 V I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -206,11 +206,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Diode:1N4001
+# Diode_1N4001
 #
-DEF Diode:1N4001 D 0 40 N N 1 F N
+DEF Diode_1N4001 D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "Diode:1N4001" 0 -100 50 H V C CNN
+F1 "Diode_1N4001" 0 -100 50 H V C CNN
 F2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" 0 -175 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 ALIAS 1N4002 1N4003 1N4004 1N4005 1N4006 1N4007 BA157 BA158 BA159
@@ -226,11 +226,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Drum-rescue:MIC5205-5.0YM5-Regulator_Linear
+# Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue
 #
-DEF Drum-rescue:MIC5205-5.0YM5-Regulator_Linear U 0 10 Y Y 1 F N
+DEF Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue U 0 10 Y Y 1 F N
 F0 "U" -150 225 50 H V C CNN
-F1 "Drum-rescue:MIC5205-5.0YM5-Regulator_Linear" 0 225 50 H V L CNN
+F1 "Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue" 0 225 50 H V L CNN
 F2 "Package_TO_SOT_SMD:SOT-23-5" 0 325 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -246,11 +246,11 @@ X OUT 5 300 100 100 L 50 50 1 1 w
 ENDDRAW
 ENDDEF
 #
-# Transistor_BJT:MMBT3904
+# Transistor_BJT_MMBT3904
 #
-DEF Transistor_BJT:MMBT3904 Q 0 0 Y N 1 F N
+DEF Transistor_BJT_MMBT3904 Q 0 0 Y N 1 F N
 F0 "Q" 200 75 50 H V L CNN
-F1 "Transistor_BJT:MMBT3904" 200 0 50 H V L CNN
+F1 "Transistor_BJT_MMBT3904" 200 0 50 H V L CNN
 F2 "Package_TO_SOT_SMD:SOT-23" 200 -75 50 H I L CIN
 F3 "" 0 0 50 H I L CNN
 ALIAS BC818 BC847 BC848 BC849 BC850 MMBT3904 MMBT5550L MMBT5551L
@@ -269,11 +269,11 @@ X C 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# power:+12V
+# power_+12V
 #
-DEF power:+12V #PWR 0 0 Y Y 1 F P
+DEF power_+12V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "power:+12V" 0 140 50 H V C CNN
+F1 "power_+12V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -284,11 +284,11 @@ X +12V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# power:+5V
+# power_+5V
 #
-DEF power:+5V #PWR 0 0 Y Y 1 F P
+DEF power_+5V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "power:+5V" 0 140 50 H V C CNN
+F1 "power_+5V" 0 140 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -299,11 +299,11 @@ X +5V 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# power:-12V
+# power_-12V
 #
-DEF power:-12V #PWR 0 0 Y Y 1 F P
+DEF power_-12V #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 100 50 H I C CNN
-F1 "power:-12V" 0 150 50 H V C CNN
+F1 "power_-12V" 0 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -312,11 +312,11 @@ X -12V 1 0 0 0 U 50 50 0 0 W N
 ENDDRAW
 ENDDEF
 #
-# power:GND
+# power_GND
 #
-DEF power:GND #PWR 0 0 Y Y 1 F P
+DEF power_GND #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "power:GND" 0 -150 50 H V C CNN
+F1 "power_GND" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

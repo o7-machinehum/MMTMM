@@ -1054,4 +1054,74 @@ Wire Wire Line
 Connection ~ 3300 7150
 Text Notes 4900 5950 0    118  ~ 0
 1. Place Reasonable values for HPF/LPF.\n2. Testpoint things.
+$Comp
+L 74xx:74HC74 U?
+U 3 1 5C9E2140
+P 4550 6700
+AR Path="/5C9E2140" Ref="U?"  Part="3" 
+AR Path="/5C9E40A5/5C9E2140" Ref="U1"  Part="3" 
+F 0 "U1" V 4200 6600 50  0000 L CNN
+F 1 "74HC74" V 4300 6550 50  0000 L CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 4550 6700 50  0001 C CNN
+F 3 "74xx/74hc_hct74.pdf" H 4550 6700 50  0001 C CNN
+	3    4550 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 6300 4550 6250
+Wire Wire Line
+	4550 7100 4550 7150
+$Comp
+L power:GND #PWR?
+U 1 1 5C9E2149
+P 4550 7350
+AR Path="/5C9E2149" Ref="#PWR?"  Part="1" 
+AR Path="/5C9E40A5/5C9E2149" Ref="#PWR011"  Part="1" 
+F 0 "#PWR011" H 4550 7100 50  0001 C CNN
+F 1 "GND" H 4555 7177 50  0000 C CNN
+F 2 "" H 4550 7350 50  0001 C CNN
+F 3 "" H 4550 7350 50  0001 C CNN
+	1    4550 7350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 7150 4900 7150
+Connection ~ 4550 7150
+Wire Wire Line
+	4550 7150 4550 7350
+Wire Wire Line
+	4900 6250 4550 6250
+Connection ~ 4550 6250
+Wire Wire Line
+	4550 6250 4550 6050
+$Comp
+L power:+5V #PWR?
+U 1 1 5C9E2155
+P 4550 6050
+AR Path="/5C9E2155" Ref="#PWR?"  Part="1" 
+AR Path="/5C9E40A5/5C9E2155" Ref="#PWR010"  Part="1" 
+F 0 "#PWR010" H 4550 5900 50  0001 C CNN
+F 1 "+5V" H 4565 6223 50  0000 C CNN
+F 2 "" H 4550 6050 50  0001 C CNN
+F 3 "" H 4550 6050 50  0001 C CNN
+	1    4550 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5C9E215B
+P 4900 6650
+AR Path="/5C9E215B" Ref="C?"  Part="1" 
+AR Path="/5C9E40A5/5C9E215B" Ref="C2"  Part="1" 
+F 0 "C2" H 4992 6696 50  0000 L CNN
+F 1 "1uF" H 4992 6605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4900 6650 50  0001 C CNN
+F 3 "~" H 4900 6650 50  0001 C CNN
+	1    4900 6650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 6250 4900 6550
+Wire Wire Line
+	4900 6750 4900 7150
 $EndSCHEMATC
