@@ -10,7 +10,7 @@ This is our most active project right now. V2 is finished and off to fab, testin
 This is a design that conditions synth level audio into 4bit. Then exposes the 4 bits in a breadboard area which allows the user to patch up digital logic. Then the 4bit audio is converted back into the analog domain. It's possible to make some very complex sounds. Here is the overall design...
 ![alt text](logiCrusher/Images/LC-2.png)
 
-Some wavforms...
+Some wavforms, the blue is the input and the yellow is the output. <br>
 ![alt text](logiCrusher/Images/SDS00001.BMP)
 ![alt text](logiCrusher/Images/SDS00002.BMP)
 ![alt text](logiCrusher/Images/SDS00003.BMP)
