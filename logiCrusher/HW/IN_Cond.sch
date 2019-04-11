@@ -1,0 +1,142 @@
+EESchema Schematic File Version 4
+LIBS:HW-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Barrel_Jack_Switch J?
+U 1 1 5CB9C1B4
+P 2750 3400
+F 0 "J?" H 2805 3717 50  0000 C CNN
+F 1 "Barrel_Jack_Switch" H 2805 3626 50  0000 C CNN
+F 2 "Eurocad:PJ301M-12" H 2800 3360 50  0001 C CNN
+F 3 "~" H 2800 3360 50  0001 C CNN
+	1    2750 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5CB9C1BB
+P 3400 3300
+F 0 "R?" V 3195 3300 50  0000 C CNN
+F 1 "100k" V 3286 3300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3440 3290 50  0001 C CNN
+F 3 "~" H 3400 3300 50  0001 C CNN
+	1    3400 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Transistor_BJT:MMBT3904 Q?
+U 1 1 5CB9C1C2
+P 4550 3300
+F 0 "Q?" H 4741 3346 50  0000 L CNN
+F 1 "MMBT3904" H 4741 3255 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4750 3225 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 4550 3300 50  0001 L CNN
+	1    4550 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 3500 3200 3500
+Wire Wire Line
+	3200 3500 3200 3700
+$Comp
+L power:GND #PWR?
+U 1 1 5CB9C1CB
+P 3200 3700
+F 0 "#PWR?" H 3200 3450 50  0001 C CNN
+F 1 "GND" H 3205 3527 50  0000 C CNN
+F 2 "" H 3200 3700 50  0001 C CNN
+F 3 "" H 3200 3700 50  0001 C CNN
+	1    3200 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5CB9C1D1
+P 3850 3450
+F 0 "R?" H 3782 3404 50  0000 R CNN
+F 1 "1M" H 3782 3495 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3890 3440 50  0001 C CNN
+F 3 "~" H 3850 3450 50  0001 C CNN
+	1    3850 3450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3050 3300 3250 3300
+Wire Wire Line
+	3550 3300 3850 3300
+$Comp
+L power:GND #PWR?
+U 1 1 5CB9C1DA
+P 3850 3650
+F 0 "#PWR?" H 3850 3400 50  0001 C CNN
+F 1 "GND" H 3855 3477 50  0000 C CNN
+F 2 "" H 3850 3650 50  0001 C CNN
+F 3 "" H 3850 3650 50  0001 C CNN
+	1    3850 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 3650 3850 3600
+Wire Wire Line
+	3850 3300 4350 3300
+Connection ~ 3850 3300
+$Comp
+L Device:R_US R?
+U 1 1 5CB9C1E3
+P 4650 2850
+F 0 "R?" H 4582 2804 50  0000 R CNN
+F 1 "10k" H 4582 2895 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4690 2840 50  0001 C CNN
+F 3 "~" H 4650 2850 50  0001 C CNN
+	1    4650 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4650 2700 4650 2550
+$Comp
+L power:GND #PWR?
+U 1 1 5CB9C1EB
+P 4650 3650
+F 0 "#PWR?" H 4650 3400 50  0001 C CNN
+F 1 "GND" H 4655 3477 50  0000 C CNN
+F 2 "" H 4650 3650 50  0001 C CNN
+F 3 "" H 4650 3650 50  0001 C CNN
+	1    4650 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 3650 4650 3500
+Wire Wire Line
+	4650 3000 4650 3050
+Wire Wire Line
+	4650 3050 5100 3050
+Connection ~ 4650 3050
+Wire Wire Line
+	4650 3050 4650 3100
+Text GLabel 5100 3050 2    50   Output ~ 0
+TRIG
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CB9C1F7
+P 4650 2550
+F 0 "#PWR?" H 4650 2400 50  0001 C CNN
+F 1 "+3.3V" H 4665 2723 50  0000 C CNN
+F 2 "" H 4650 2550 50  0001 C CNN
+F 3 "" H 4650 2550 50  0001 C CNN
+	1    4650 2550
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

@@ -1,0 +1,321 @@
+EESchema Schematic File Version 4
+LIBS:HW-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	4100 5400 4100 5500
+Connection ~ 4100 5500
+Wire Wire Line
+	4100 5500 4100 5600
+Wire Wire Line
+	4100 5500 3900 5500
+Wire Wire Line
+	3900 5500 3900 5550
+Wire Wire Line
+	4600 5400 4600 5500
+Connection ~ 4600 5500
+Wire Wire Line
+	4600 5500 4600 5600
+Wire Wire Line
+	4600 5500 4800 5500
+Wire Wire Line
+	4800 5500 4800 5550
+$Comp
+L power:GND #PWR06
+U 1 1 5C786931
+P 4800 5550
+F 0 "#PWR06" H 4800 5300 50  0001 C CNN
+F 1 "GND" H 4805 5377 50  0000 C CNN
+F 2 "" H 4800 5550 50  0001 C CNN
+F 3 "" H 4800 5550 50  0001 C CNN
+	1    4800 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5C786958
+P 3900 5550
+F 0 "#PWR01" H 3900 5300 50  0001 C CNN
+F 1 "GND" H 3905 5377 50  0000 C CNN
+F 2 "" H 3900 5550 50  0001 C CNN
+F 3 "" H 3900 5550 50  0001 C CNN
+	1    3900 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 5700 4050 5700
+Wire Wire Line
+	4050 5700 4050 5800
+Wire Wire Line
+	4050 5800 4350 5800
+Wire Wire Line
+	4650 5800 4650 5700
+Wire Wire Line
+	4650 5700 4600 5700
+Connection ~ 4350 5800
+Wire Wire Line
+	4350 5800 4650 5800
+Wire Wire Line
+	4100 5300 4050 5300
+Wire Wire Line
+	4050 5300 4050 5200
+Wire Wire Line
+	4050 5200 4350 5200
+Wire Wire Line
+	4650 5200 4650 5300
+Wire Wire Line
+	4650 5300 4600 5300
+Connection ~ 4350 5200
+Wire Wire Line
+	4350 5200 4650 5200
+$Comp
+L power:+12V #PWR04
+U 1 1 5C7896D2
+P 4350 4650
+F 0 "#PWR04" H 4350 4500 50  0001 C CNN
+F 1 "+12V" H 4365 4823 50  0000 C CNN
+F 2 "" H 4350 4650 50  0001 C CNN
+F 3 "" H 4350 4650 50  0001 C CNN
+	1    4350 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-12V #PWR05
+U 1 1 5C7899E0
+P 4350 6350
+F 0 "#PWR05" H 4350 6450 50  0001 C CNN
+F 1 "-12V" H 4365 6523 50  0000 C CNN
+F 2 "" H 4350 6350 50  0001 C CNN
+F 3 "" H 4350 6350 50  0001 C CNN
+	1    4350 6350
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+12V #PWR09
+U 1 1 5C789B5E
+P 5550 5300
+F 0 "#PWR09" H 5550 5150 50  0001 C CNN
+F 1 "+12V" H 5565 5473 50  0000 C CNN
+F 2 "" H 5550 5300 50  0001 C CNN
+F 3 "" H 5550 5300 50  0001 C CNN
+	1    5550 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C1
+U 1 1 5C78B867
+P 5550 5650
+F 0 "C1" H 5642 5696 50  0000 L CNN
+F 1 "1uF" H 5642 5605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 5550 5650 50  0001 C CNN
+F 3 "~" H 5550 5650 50  0001 C CNN
+	1    5550 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 5750 5550 5900
+Wire Wire Line
+	5550 5300 5550 5450
+Connection ~ 5550 5450
+Wire Wire Line
+	5550 5450 5550 5550
+Wire Wire Line
+	6450 5450 6650 5450
+Wire Wire Line
+	6750 5450 6750 5300
+$Comp
+L power:GND #PWR016
+U 1 1 5C793461
+P 6150 5950
+F 0 "#PWR016" H 6150 5700 50  0001 C CNN
+F 1 "GND" H 6155 5777 50  0000 C CNN
+F 2 "" H 6150 5950 50  0001 C CNN
+F 3 "" H 6150 5950 50  0001 C CNN
+	1    6150 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 5950 6150 5900
+$Comp
+L Device:C_Small C3
+U 1 1 5C794766
+P 6650 5650
+F 0 "C3" H 6742 5696 50  0000 L CNN
+F 1 "1uF" H 6742 5605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6650 5650 50  0001 C CNN
+F 3 "~" H 6650 5650 50  0001 C CNN
+	1    6650 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 5900 5550 5900
+Connection ~ 6150 5900
+Wire Wire Line
+	6150 5900 6650 5900
+Wire Wire Line
+	6650 5900 6650 5750
+Wire Wire Line
+	6650 5550 6650 5450
+Connection ~ 6650 5450
+Wire Wire Line
+	6650 5450 6750 5450
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J3
+U 1 1 5C8934D1
+P 4300 5500
+F 0 "J3" H 3550 5050 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 3900 5150 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" H 4300 5500 50  0001 C CNN
+F 3 "~" H 4300 5500 50  0001 C CNN
+	1    4300 5500
+	1    0    0    1   
+$EndComp
+$Comp
+L Diode:1N4001 D1
+U 1 1 5C89B062
+P 4350 4900
+F 0 "D1" V 4304 4979 50  0000 L CNN
+F 1 "STTH102A" V 4395 4979 50  0000 L CNN
+F 2 "Diode_SMD:D_SMA" H 4350 4725 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 4350 4900 50  0001 C CNN
+	1    4350 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4350 5050 4350 5200
+Wire Wire Line
+	4350 4750 4350 4700
+$Comp
+L Diode:1N4001 D2
+U 1 1 5C8AEF3C
+P 4350 6100
+F 0 "D2" V 4304 6179 50  0000 L CNN
+F 1 "STTH102A" V 4395 6179 50  0000 L CNN
+F 2 "Diode_SMD:D_SMA" H 4350 5925 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 4350 6100 50  0001 C CNN
+	1    4350 6100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4350 6350 4350 6300
+$Comp
+L Device:CP1 C13
+U 1 1 5C8DA652
+P 4900 4900
+F 0 "C13" H 5015 4946 50  0000 L CNN
+F 1 "CP1" H 5015 4855 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_3x5.3" H 4900 4900 50  0001 C CNN
+F 3 "~" H 4900 4900 50  0001 C CNN
+	1    4900 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C12
+U 1 1 5C8DA792
+P 3900 6500
+F 0 "C12" H 3785 6454 50  0000 R CNN
+F 1 "CP1" H 3785 6545 50  0000 R CNN
+F 2 "Capacitor_SMD:CP_Elec_3x5.3" H 3900 6500 50  0001 C CNN
+F 3 "~" H 3900 6500 50  0001 C CNN
+	1    3900 6500
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	3900 6350 3900 6300
+Wire Wire Line
+	4900 4750 4900 4700
+Wire Wire Line
+	4900 4700 4350 4700
+Connection ~ 4350 4700
+Wire Wire Line
+	4350 4700 4350 4650
+$Comp
+L power:GND #PWR0101
+U 1 1 5C8E961E
+P 4900 5100
+F 0 "#PWR0101" H 4900 4850 50  0001 C CNN
+F 1 "GND" H 4905 4927 50  0000 C CNN
+F 2 "" H 4900 5100 50  0001 C CNN
+F 3 "" H 4900 5100 50  0001 C CNN
+	1    4900 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5C8E98B3
+P 3900 6700
+F 0 "#PWR0102" H 3900 6450 50  0001 C CNN
+F 1 "GND" H 3905 6527 50  0000 C CNN
+F 2 "" H 3900 6700 50  0001 C CNN
+F 3 "" H 3900 6700 50  0001 C CNN
+	1    3900 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 6700 3900 6650
+Wire Wire Line
+	4900 5100 4900 5050
+Wire Wire Line
+	4350 5800 4350 5950
+Wire Wire Line
+	3900 6300 4350 6300
+Connection ~ 4350 6300
+Wire Wire Line
+	4350 6300 4350 6250
+$Comp
+L Regulator_Switching:R-783.3-0.5 U1
+U 1 1 5C857BBE
+P 6150 5450
+F 0 "U1" H 6150 5692 50  0000 C CNN
+F 1 "R-783.3-0.5" H 6150 5601 50  0000 C CNN
+F 2 "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT" H 6200 5200 50  0001 L CIN
+F 3 "https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf" H 6150 5450 50  0001 C CNN
+	1    6150 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 5750 6150 5900
+Wire Wire Line
+	5550 5450 5850 5450
+$Comp
+L power:+3.3V #PWR020
+U 1 1 5C85C12C
+P 6750 5300
+F 0 "#PWR020" H 6750 5150 50  0001 C CNN
+F 1 "+3.3V" H 6765 5473 50  0000 C CNN
+F 2 "" H 6750 5300 50  0001 C CNN
+F 3 "" H 6750 5300 50  0001 C CNN
+	1    6750 5300
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 3500 1900 1300 1500
+U 5CB08311
+F0 "MCU" 50
+F1 "MCU.sch" 50
+$EndSheet
+$Sheet
+S 1800 1900 1300 1500
+U 5CB92368
+F0 "IN_Cond" 50
+F1 "IN_Cond.sch" 50
+$EndSheet
+$Sheet
+S 5300 1900 1200 1500
+U 5CBAEA8D
+F0 "OUT_Cond" 50
+F1 "OUT_Cond.sch" 50
+$EndSheet
+$EndSCHEMATC

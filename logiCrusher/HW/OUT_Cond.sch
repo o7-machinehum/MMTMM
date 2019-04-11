@@ -1,0 +1,568 @@
+EESchema Schematic File Version 4
+LIBS:HW-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	3700 4200 3550 4200
+$Comp
+L Device:R_US R?
+U 1 1 5CBB18C3
+P 3850 4200
+AR Path="/5CBB18C3" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB18C3" Ref="R?"  Part="1" 
+F 0 "R?" H 3782 4154 50  0000 R CNN
+F 1 "0R" H 3782 4245 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3890 4190 50  0001 C CNN
+F 3 "~" H 3850 4200 50  0001 C CNN
+	1    3850 4200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6100 4500 6100 4700
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB18CB
+P 6100 4700
+AR Path="/5CBB18CB" Ref="#PWR?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB18CB" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6100 4450 50  0001 C CNN
+F 1 "GND" H 6105 4527 50  0000 C CNN
+F 2 "" H 6100 4700 50  0001 C CNN
+F 3 "" H 6100 4700 50  0001 C CNN
+	1    6100 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 4500 6100 4500
+Wire Wire Line
+	6750 4050 7100 4050
+$Comp
+L Device:R_US R?
+U 1 1 5CBB18D3
+P 6600 4050
+AR Path="/5CBB18D3" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB18D3" Ref="R?"  Part="1" 
+F 0 "R?" H 6532 4004 50  0000 R CNN
+F 1 "600k" H 6532 4095 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6640 4040 50  0001 C CNN
+F 3 "~" H 6600 4050 50  0001 C CNN
+	1    6600 4050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5CBB18DA
+P 5850 4300
+AR Path="/5CBB18DA" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB18DA" Ref="R?"  Part="1" 
+F 0 "R?" H 5782 4254 50  0000 R CNN
+F 1 "100k" H 5782 4345 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5890 4290 50  0001 C CNN
+F 3 "~" H 5850 4300 50  0001 C CNN
+	1    5850 4300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7100 4400 7750 4400
+Wire Wire Line
+	7100 4400 6850 4400
+Connection ~ 7100 4400
+Wire Wire Line
+	7100 4050 7100 4400
+Wire Wire Line
+	6100 4050 6450 4050
+Wire Wire Line
+	6000 4300 6100 4300
+Wire Wire Line
+	6100 4300 6250 4300
+Connection ~ 6100 4300
+Wire Wire Line
+	6100 4300 6100 4050
+Wire Wire Line
+	5600 4300 5700 4300
+Wire Wire Line
+	5600 4300 5400 4300
+Connection ~ 5600 4300
+Wire Wire Line
+	5600 3900 5600 4300
+Wire Wire Line
+	5200 3900 5600 3900
+Wire Wire Line
+	4550 3900 4900 3900
+Wire Wire Line
+	4550 4200 4550 3900
+$Comp
+L Device:R_US R?
+U 1 1 5CBB18F1
+P 5050 3900
+AR Path="/5CBB18F1" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB18F1" Ref="R?"  Part="1" 
+F 0 "R?" H 4982 3854 50  0000 R CNN
+F 1 "1M" H 4982 3945 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5090 3890 50  0001 C CNN
+F 3 "~" H 5050 3900 50  0001 C CNN
+	1    5050 3900
+	0    -1   -1   0   
+$EndComp
+Text Label 3800 4450 0    50   ~ 0
+-1.65V
+Wire Wire Line
+	4150 4450 3800 4450
+Wire Wire Line
+	4150 4200 4000 4200
+Wire Wire Line
+	4550 4200 4450 4200
+Connection ~ 4550 4200
+Wire Wire Line
+	4550 4200 4800 4200
+Wire Wire Line
+	4550 4450 4550 4200
+Wire Wire Line
+	4450 4450 4550 4450
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB1900
+P 4700 4500
+AR Path="/5CBB1900" Ref="#PWR?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1900" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4700 4250 50  0001 C CNN
+F 1 "GND" H 4705 4327 50  0000 C CNN
+F 2 "" H 4700 4500 50  0001 C CNN
+F 3 "" H 4700 4500 50  0001 C CNN
+	1    4700 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 4400 4700 4500
+Wire Wire Line
+	4800 4400 4700 4400
+$Comp
+L Device:R_US R?
+U 1 1 5CBB1908
+P 4300 4450
+AR Path="/5CBB1908" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1908" Ref="R?"  Part="1" 
+F 0 "R?" H 4232 4404 50  0000 R CNN
+F 1 "1M" H 4232 4495 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4340 4440 50  0001 C CNN
+F 3 "~" H 4300 4450 50  0001 C CNN
+	1    4300 4450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5CBB190F
+P 4300 4200
+AR Path="/5CBB190F" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB190F" Ref="R?"  Part="1" 
+F 0 "R?" H 4232 4154 50  0000 R CNN
+F 1 "1M" H 4232 4245 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4340 4190 50  0001 C CNN
+F 3 "~" H 4300 4200 50  0001 C CNN
+	1    4300 4200
+	0    -1   -1   0   
+$EndComp
+Text Label 7650 2750 0    50   ~ 0
+-1.65V
+Text Label 5600 2650 0    50   ~ 0
+1.65V
+Wire Wire Line
+	7000 2350 7400 2350
+$Comp
+L Device:R_US R?
+U 1 1 5CBB1919
+P 6850 2350
+AR Path="/5CBB1919" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1919" Ref="R?"  Part="1" 
+F 0 "R?" H 6782 2304 50  0000 R CNN
+F 1 "1M" H 6782 2395 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6890 2340 50  0001 C CNN
+F 3 "~" H 6850 2350 50  0001 C CNN
+	1    6850 2350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6250 2650 6400 2650
+Wire Wire Line
+	7400 2750 7650 2750
+Wire Wire Line
+	7400 2750 7000 2750
+Connection ~ 7400 2750
+Wire Wire Line
+	7400 2350 7400 2750
+Wire Wire Line
+	6250 2350 6700 2350
+Wire Wire Line
+	6250 2650 6250 2350
+Connection ~ 6250 2650
+Wire Wire Line
+	6050 2650 6250 2650
+$Comp
+L Device:R_US R?
+U 1 1 5CBB1929
+P 5900 2650
+AR Path="/5CBB1929" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1929" Ref="R?"  Part="1" 
+F 0 "R?" H 5832 2604 50  0000 R CNN
+F 1 "1M" H 5832 2695 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5940 2640 50  0001 C CNN
+F 3 "~" H 5900 2650 50  0001 C CNN
+	1    5900 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB1930
+P 6300 2950
+AR Path="/5CBB1930" Ref="#PWR?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1930" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6300 2700 50  0001 C CNN
+F 1 "GND" H 6305 2777 50  0000 C CNN
+F 2 "" H 6300 2950 50  0001 C CNN
+F 3 "" H 6300 2950 50  0001 C CNN
+	1    6300 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 2850 6300 2950
+Wire Wire Line
+	6400 2850 6300 2850
+Wire Wire Line
+	4500 2200 4500 2100
+Wire Wire Line
+	4500 2900 4500 3000
+Wire Wire Line
+	5550 2650 5750 2650
+Wire Wire Line
+	5550 2650 5450 2650
+Connection ~ 5550 2650
+Wire Wire Line
+	5550 2900 5550 2650
+Wire Wire Line
+	4800 2900 5550 2900
+Wire Wire Line
+	4800 2750 4800 2900
+Wire Wire Line
+	4850 2750 4800 2750
+Wire Wire Line
+	4500 2550 4500 2600
+Wire Wire Line
+	4500 2550 4850 2550
+Connection ~ 4500 2550
+Wire Wire Line
+	4500 2500 4500 2550
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB1945
+P 4500 3000
+AR Path="/5CBB1945" Ref="#PWR?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1945" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4500 2750 50  0001 C CNN
+F 1 "GND" H 4505 2827 50  0000 C CNN
+F 2 "" H 4500 3000 50  0001 C CNN
+F 3 "" H 4500 3000 50  0001 C CNN
+	1    4500 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5CBB194B
+P 4500 2750
+AR Path="/5CBB194B" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB194B" Ref="R?"  Part="1" 
+F 0 "R?" H 4432 2704 50  0000 R CNN
+F 1 "1M" H 4432 2795 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4540 2740 50  0001 C CNN
+F 3 "~" H 4500 2750 50  0001 C CNN
+	1    4500 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5CBB1952
+P 4500 2350
+AR Path="/5CBB1952" Ref="R?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1952" Ref="R?"  Part="1" 
+F 0 "R?" H 4432 2304 50  0000 R CNN
+F 1 "1M" H 4432 2395 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4540 2340 50  0001 C CNN
+F 3 "~" H 4500 2350 50  0001 C CNN
+	1    4500 2350
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CBB1959
+P 4500 2100
+AR Path="/5CBB1959" Ref="#PWR?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1959" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4500 1950 50  0001 C CNN
+F 1 "+3.3V" H 4515 2273 50  0000 C CNN
+F 2 "" H 4500 2100 50  0001 C CNN
+F 3 "" H 4500 2100 50  0001 C CNN
+	1    4500 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Opamp_Dual_Generic U?
+U 1 1 5CBB195F
+P 6550 4400
+AR Path="/5CBB195F" Ref="U?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB195F" Ref="U?"  Part="1" 
+F 0 "U?" H 6650 4150 50  0000 C CNN
+F 1 "LM2904DR" H 6800 4250 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6550 4400 50  0001 C CNN
+F 3 "~" H 6550 4400 50  0001 C CNN
+	1    6550 4400
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:Opamp_Dual_Generic U?
+U 2 1 5CBB1966
+P 5100 4300
+AR Path="/5CBB1966" Ref="U?"  Part="2" 
+AR Path="/5CBAEA8D/5CBB1966" Ref="U?"  Part="2" 
+F 0 "U?" H 5100 4500 50  0000 C CNN
+F 1 "LM2904DR" H 5100 4600 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5100 4300 50  0001 C CNN
+F 3 "~" H 5100 4300 50  0001 C CNN
+	2    5100 4300
+	1    0    0    1   
+$EndComp
+Text GLabel 3550 4200 0    50   Input ~ 0
+DAC_OUT
+$Comp
+L Device:Opamp_Dual_Generic U?
+U 2 1 5CBB196E
+P 5150 2650
+AR Path="/5CBB196E" Ref="U?"  Part="2" 
+AR Path="/5CBAEA8D/5CBB196E" Ref="U?"  Part="2" 
+F 0 "U?" H 5150 2850 50  0000 C CNN
+F 1 "LM2904DR" H 5150 2950 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5150 2650 50  0001 C CNN
+F 3 "~" H 5150 2650 50  0001 C CNN
+	2    5150 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Barrel_Jack_Switch J?
+U 1 1 5CBB1975
+P 8050 4500
+AR Path="/5CBB1975" Ref="J?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1975" Ref="J?"  Part="1" 
+F 0 "J?" H 8250 4300 50  0000 R CNN
+F 1 "Barrel_Jack_Switch" H 8250 4200 50  0000 R CNN
+F 2 "Eurocad:PJ301M-12" H 8100 4460 50  0001 C CNN
+F 3 "~" H 8100 4460 50  0001 C CNN
+	1    8050 4500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:Opamp_Dual_Generic U?
+U 1 1 5CBB197C
+P 6700 2750
+AR Path="/5CBB197C" Ref="U?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB197C" Ref="U?"  Part="1" 
+F 0 "U?" H 6800 2900 50  0000 C CNN
+F 1 "LM2904DR" H 6850 3000 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6700 2750 50  0001 C CNN
+F 3 "~" H 6700 2750 50  0001 C CNN
+	1    6700 2750
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	7750 4600 7650 4600
+Wire Wire Line
+	7650 4600 7650 4750
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB1985
+P 7650 4750
+AR Path="/5CBB1985" Ref="#PWR?"  Part="1" 
+AR Path="/5CBAEA8D/5CBB1985" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7650 4500 50  0001 C CNN
+F 1 "GND" H 7655 4577 50  0000 C CNN
+F 2 "" H 7650 4750 50  0001 C CNN
+F 3 "" H 7650 4750 50  0001 C CNN
+	1    7650 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Opamp_Dual_Generic U?
+U 3 1 5CBB4931
+P 2000 6600
+F 0 "U?" H 2000 6350 50  0000 C CNN
+F 1 "LM2904DR" H 2250 6450 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2000 6600 50  0001 C CNN
+F 3 "~" H 2000 6600 50  0001 C CNN
+	3    2000 6600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:Opamp_Dual_Generic U?
+U 3 1 5CBB4938
+P 1250 6600
+F 0 "U?" H 1400 6300 50  0000 C CNN
+F 1 "LM2904DR" H 1400 6400 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 1250 6600 50  0001 C CNN
+F 3 "~" H 1250 6600 50  0001 C CNN
+	3    1250 6600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5CBB493F
+P 1700 6050
+F 0 "#PWR?" H 1700 5900 50  0001 C CNN
+F 1 "+12V" H 1715 6223 50  0000 C CNN
+F 2 "" H 1700 6050 50  0001 C CNN
+F 3 "" H 1700 6050 50  0001 C CNN
+	1    1700 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-12V #PWR?
+U 1 1 5CBB4945
+P 1700 7150
+F 0 "#PWR?" H 1700 7250 50  0001 C CNN
+F 1 "-12V" H 1715 7323 50  0000 C CNN
+F 2 "" H 1700 7150 50  0001 C CNN
+F 3 "" H 1700 7150 50  0001 C CNN
+	1    1700 7150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1350 6900 1350 7100
+Wire Wire Line
+	1350 7100 1700 7100
+Wire Wire Line
+	2100 7100 2100 6900
+Connection ~ 1700 7100
+Wire Wire Line
+	1700 7100 2100 7100
+Wire Wire Line
+	2100 6300 2100 6100
+Wire Wire Line
+	2100 6100 1700 6100
+Wire Wire Line
+	1350 6100 1350 6300
+Wire Wire Line
+	1700 6050 1700 6100
+Connection ~ 1700 6100
+Wire Wire Line
+	1700 6100 1350 6100
+Wire Wire Line
+	1700 7150 1700 7100
+$Comp
+L Device:C_Small C?
+U 1 1 5CBB4957
+P 2250 7200
+F 0 "C?" H 2342 7246 50  0000 L CNN
+F 1 "1uF" H 2342 7155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2250 7200 50  0001 C CNN
+F 3 "~" H 2250 7200 50  0001 C CNN
+	1    2250 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CBB495E
+P 1150 7200
+F 0 "C?" H 1242 7246 50  0000 L CNN
+F 1 "1uF" H 1242 7155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1150 7200 50  0001 C CNN
+F 3 "~" H 1150 7200 50  0001 C CNN
+	1    1150 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CBB4965
+P 2300 6200
+F 0 "C?" H 2392 6246 50  0000 L CNN
+F 1 "1uF" H 2392 6155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2300 6200 50  0001 C CNN
+F 3 "~" H 2300 6200 50  0001 C CNN
+	1    2300 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CBB496C
+P 1100 6200
+F 0 "C?" H 1192 6246 50  0000 L CNN
+F 1 "1uF" H 1192 6155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1100 6200 50  0001 C CNN
+F 3 "~" H 1100 6200 50  0001 C CNN
+	1    1100 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 6100 1350 6100
+Connection ~ 1350 6100
+Wire Wire Line
+	2300 6100 2100 6100
+Connection ~ 2100 6100
+Wire Wire Line
+	2250 7100 2100 7100
+Connection ~ 2100 7100
+Wire Wire Line
+	1350 7100 1150 7100
+Connection ~ 1350 7100
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB497B
+P 1100 6300
+F 0 "#PWR?" H 1100 6050 50  0001 C CNN
+F 1 "GND" H 1105 6127 50  0000 C CNN
+F 2 "" H 1100 6300 50  0001 C CNN
+F 3 "" H 1100 6300 50  0001 C CNN
+	1    1100 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB4981
+P 2300 6300
+F 0 "#PWR?" H 2300 6050 50  0001 C CNN
+F 1 "GND" H 2305 6127 50  0000 C CNN
+F 2 "" H 2300 6300 50  0001 C CNN
+F 3 "" H 2300 6300 50  0001 C CNN
+	1    2300 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB4987
+P 2250 7300
+F 0 "#PWR?" H 2250 7050 50  0001 C CNN
+F 1 "GND" H 2255 7127 50  0000 C CNN
+F 2 "" H 2250 7300 50  0001 C CNN
+F 3 "" H 2250 7300 50  0001 C CNN
+	1    2250 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CBB498D
+P 1150 7300
+F 0 "#PWR?" H 1150 7050 50  0001 C CNN
+F 1 "GND" H 1155 7127 50  0000 C CNN
+F 2 "" H 1150 7300 50  0001 C CNN
+F 3 "" H 1150 7300 50  0001 C CNN
+	1    1150 7300
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
