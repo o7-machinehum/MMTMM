@@ -15,18 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 74xx:74HC74 U1
-U 3 1 5C782298
-P 2400 6500
-F 0 "U1" V 2050 6400 50  0000 L CNN
-F 1 "74HC74" V 2150 6350 50  0000 L CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 2400 6500 50  0001 C CNN
-F 3 "74xx/74hc_hct74.pdf" H 2400 6500 50  0001 C CNN
-	3    2400 6500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Drum-rescue:MIC5205-5.0YM5-Regulator_Linear U2
+L Drum-rescue:MIC5205-5.0YM5-Regulator_Linear-Drum-rescue U2
 U 1 1 5C78249B
 P 2950 4950
 F 0 "U2" H 2950 5292 50  0000 C CNN
@@ -36,31 +25,6 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005785A.pdf" H 2950 4950 
 	1    2950 4950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2400 6100 2400 6050
-Wire Wire Line
-	2400 6900 2400 6950
-$Comp
-L power:GND #PWR011
-U 1 1 5C784795
-P 2400 7150
-F 0 "#PWR011" H 2400 6900 50  0001 C CNN
-F 1 "GND" H 2405 6977 50  0000 C CNN
-F 2 "" H 2400 7150 50  0001 C CNN
-F 3 "" H 2400 7150 50  0001 C CNN
-	1    2400 7150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2400 6950 2750 6950
-Connection ~ 2400 6950
-Wire Wire Line
-	2400 6950 2400 7150
-Wire Wire Line
-	2750 6050 2400 6050
-Connection ~ 2400 6050
-Wire Wire Line
-	2400 6050 2400 5850
 Wire Wire Line
 	1200 5900 1200 6000
 Connection ~ 1200 6000
@@ -202,32 +166,6 @@ F 3 "" H 3550 4700 50  0001 C CNN
 	1    3550 4700
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+5V #PWR010
-U 1 1 5C79170B
-P 2400 5850
-F 0 "#PWR010" H 2400 5700 50  0001 C CNN
-F 1 "+5V" H 2415 6023 50  0000 C CNN
-F 2 "" H 2400 5850 50  0001 C CNN
-F 3 "" H 2400 5850 50  0001 C CNN
-	1    2400 5850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C2
-U 1 1 5C791734
-P 2750 6450
-F 0 "C2" H 2842 6496 50  0000 L CNN
-F 1 "1uF" H 2842 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2750 6450 50  0001 C CNN
-F 3 "~" H 2750 6450 50  0001 C CNN
-	1    2750 6450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2750 6050 2750 6350
-Wire Wire Line
-	2750 6550 2750 6950
 $Comp
 L power:GND #PWR016
 U 1 1 5C793461

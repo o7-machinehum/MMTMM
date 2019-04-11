@@ -15,13 +15,23 @@ void StartDefaultTask(void const * argument);
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
   volatile int conv = HAL_ADC_GetValue(hadc);
+  volatile uint8_t inp = 0; // Input from DIO
+  
   conv = conv >> 8;
   
-  /* Output the quantised signal */
+  /* Output the quantised signal*/
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, static_cast<GPIO_PinState>((conv >> 0) & 1));
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, static_cast<GPIO_PinState>((conv >> 1) & 1));
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, static_cast<GPIO_PinState>((conv >> 2) & 1));
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, static_cast<GPIO_PinState>((conv >> 3) & 1));
+
+  /*Read in the signal*/
+  inp = (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0) << 0);
+  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_1) << 1);
+  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_2) << 2);
+  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) << 3);
+  
+  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, (inp * 17));
 }
 
 int main(void)
@@ -35,6 +45,7 @@ int main(void)
   MX_SDADC1_Init();
   
   HAL_ADC_Start_IT(&hadc1);
+  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
@@ -120,10 +131,6 @@ static void MX_ADC1_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN ADC1_Init 2 */
-
-  /* USER CODE END ADC1_Init 2 */
-
 }
 
 /**
@@ -133,35 +140,20 @@ static void MX_ADC1_Init(void)
   */
 static void MX_DAC1_Init(void)
 {
-
-  /* USER CODE BEGIN DAC1_Init 0 */
-
-  /* USER CODE END DAC1_Init 0 */
-
   DAC_ChannelConfTypeDef sConfig = {0};
 
-  /* USER CODE BEGIN DAC1_Init 1 */
-
-  /* USER CODE END DAC1_Init 1 */
-  /** DAC Initialization 
-  */
   hdac1.Instance = DAC1;
   if (HAL_DAC_Init(&hdac1) != HAL_OK)
   {
     Error_Handler();
   }
-  /** DAC channel OUT1 config 
-  */
+  
   sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
   sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
   if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN DAC1_Init 2 */
-
-  /* USER CODE END DAC1_Init 2 */
-
 }
 
 /**
@@ -171,19 +163,8 @@ static void MX_DAC1_Init(void)
   */
 static void MX_SDADC1_Init(void)
 {
-
-  /* USER CODE BEGIN SDADC1_Init 0 */
-
-  /* USER CODE END SDADC1_Init 0 */
-
   SDADC_ConfParamTypeDef ConfParamStruct = {0};
 
-  /* USER CODE BEGIN SDADC1_Init 1 */
-
-  /* USER CODE END SDADC1_Init 1 */
-  /** Configure the SDADC low power mode, fast conversion mode,
-  slow clock mode and SDADC1 reference voltage 
-  */
   hsdadc1.Instance = SDADC1;
   hsdadc1.Init.IdleLowPowerMode = SDADC_LOWPOWER_NONE;
   hsdadc1.Init.FastConversionMode = SDADC_FAST_CONV_DISABLE;
@@ -212,10 +193,29 @@ static void MX_SDADC1_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
-
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOE_CLK_ENABLE();
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  
+  // C
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  
+  // E
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
 }
 
