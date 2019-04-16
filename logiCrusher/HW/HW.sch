@@ -326,210 +326,6 @@ U 5CBAEA8D
 F0 "OUT_Cond" 50
 F1 "OUT_Cond.sch" 50
 $EndSheet
-$Comp
-L Device:R_POT_US RV?
-U 1 1 5CB46744
-P 4400 5250
-AR Path="/5CB46744" Ref="RV?"  Part="1" 
-AR Path="/5CB08311/5CB46744" Ref="RV?"  Part="1" 
-F 0 "RV?" V 4200 5300 50  0000 R CNN
-F 1 "R_POT_US" V 4300 5450 50  0000 R CNN
-F 2 "" H 4400 5250 50  0001 C CNN
-F 3 "~" H 4400 5250 50  0001 C CNN
-	1    4400 5250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4550 5250 4600 5250
-Wire Wire Line
-	4400 5100 4400 4950
-Wire Wire Line
-	4400 5400 4400 5550
-$Comp
-L power:GND #PWR?
-U 1 1 5CB4674E
-P 4400 5550
-AR Path="/5CB4674E" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CB4674E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4400 5300 50  0001 C CNN
-F 1 "GND" H 4405 5377 50  0000 C CNN
-F 2 "" H 4400 5550 50  0001 C CNN
-F 3 "" H 4400 5550 50  0001 C CNN
-	1    4400 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5CB46754
-P 4400 4950
-AR Path="/5CB46754" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CB46754" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4400 4800 50  0001 C CNN
-F 1 "+3.3V" H 4415 5123 50  0000 C CNN
-F 2 "" H 4400 4950 50  0001 C CNN
-F 3 "" H 4400 4950 50  0001 C CNN
-	1    4400 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_POT_US RV?
-U 1 1 5CB4675B
-P 5200 5250
-AR Path="/5CB4675B" Ref="RV?"  Part="1" 
-AR Path="/5CB08311/5CB4675B" Ref="RV?"  Part="1" 
-F 0 "RV?" V 5000 5300 50  0000 R CNN
-F 1 "R_POT_US" V 5100 5450 50  0000 R CNN
-F 2 "" H 5200 5250 50  0001 C CNN
-F 3 "~" H 5200 5250 50  0001 C CNN
-	1    5200 5250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5350 5250 5400 5250
-Wire Wire Line
-	5200 5100 5200 4950
-Wire Wire Line
-	5200 5400 5200 5550
-$Comp
-L power:GND #PWR?
-U 1 1 5CB46765
-P 5200 5550
-AR Path="/5CB46765" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CB46765" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5200 5300 50  0001 C CNN
-F 1 "GND" H 5205 5377 50  0000 C CNN
-F 2 "" H 5200 5550 50  0001 C CNN
-F 3 "" H 5200 5550 50  0001 C CNN
-	1    5200 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5CB4676B
-P 5200 4950
-AR Path="/5CB4676B" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CB4676B" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5200 4800 50  0001 C CNN
-F 1 "+3.3V" H 5215 5123 50  0000 C CNN
-F 2 "" H 5200 4950 50  0001 C CNN
-F 3 "" H 5200 4950 50  0001 C CNN
-	1    5200 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_POT_US RV?
-U 1 1 5CB46772
-P 6050 5250
-AR Path="/5CB46772" Ref="RV?"  Part="1" 
-AR Path="/5CB08311/5CB46772" Ref="RV?"  Part="1" 
-F 0 "RV?" V 5850 5300 50  0000 R CNN
-F 1 "R_POT_US" V 5950 5450 50  0000 R CNN
-F 2 "" H 6050 5250 50  0001 C CNN
-F 3 "~" H 6050 5250 50  0001 C CNN
-	1    6050 5250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6200 5250 6250 5250
-Wire Wire Line
-	6050 5100 6050 4950
-Wire Wire Line
-	6050 5400 6050 5550
-$Comp
-L power:GND #PWR?
-U 1 1 5CB4677C
-P 6050 5550
-AR Path="/5CB4677C" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CB4677C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 6050 5300 50  0001 C CNN
-F 1 "GND" H 6055 5377 50  0000 C CNN
-F 2 "" H 6050 5550 50  0001 C CNN
-F 3 "" H 6050 5550 50  0001 C CNN
-	1    6050 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5CB46782
-P 6050 4950
-AR Path="/5CB46782" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CB46782" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 6050 4800 50  0001 C CNN
-F 1 "+3.3V" H 6065 5123 50  0000 C CNN
-F 2 "" H 6050 4950 50  0001 C CNN
-F 3 "" H 6050 4950 50  0001 C CNN
-	1    6050 4950
-	1    0    0    -1  
-$EndComp
-Text Label 7200 5250 0    50   ~ 0
-ADC3
-$Comp
-L Device:R_POT_US RV?
-U 1 1 5CB46789
-P 6950 5250
-AR Path="/5CB46789" Ref="RV?"  Part="1" 
-AR Path="/5CB08311/5CB46789" Ref="RV?"  Part="1" 
-F 0 "RV?" V 6750 5300 50  0000 R CNN
-F 1 "R_POT_US" V 6850 5450 50  0000 R CNN
-F 2 "" H 6950 5250 50  0001 C CNN
-F 3 "~" H 6950 5250 50  0001 C CNN
-	1    6950 5250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7100 5250 7150 5250
-Wire Wire Line
-	6950 5100 6950 4950
-Wire Wire Line
-	6950 5400 6950 5550
-$Comp
-L power:GND #PWR?
-U 1 1 5CB46793
-P 6950 5550
-AR Path="/5CB46793" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CB46793" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 6950 5300 50  0001 C CNN
-F 1 "GND" H 6955 5377 50  0000 C CNN
-F 2 "" H 6950 5550 50  0001 C CNN
-F 3 "" H 6950 5550 50  0001 C CNN
-	1    6950 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5CB46799
-P 6950 4950
-AR Path="/5CB46799" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CB46799" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 6950 4800 50  0001 C CNN
-F 1 "+3.3V" H 6965 5123 50  0000 C CNN
-F 2 "" H 6950 4950 50  0001 C CNN
-F 3 "" H 6950 4950 50  0001 C CNN
-	1    6950 4950
-	1    0    0    -1  
-$EndComp
-Text Notes 4450 5550 0    197  ~ 0
-K1
-Text Notes 5250 5550 0    197  ~ 0
-K2
-Text Notes 6100 5550 0    197  ~ 0
-K3
-Text Notes 7000 5550 0    197  ~ 0
-K4
-NoConn ~ 4550 5000
-$Comp
-L Connector:Barrel_Jack_Switch J?
-U 1 1 5CB55AFA
-P 2650 2900
-AR Path="/5CB92368/5CB55AFA" Ref="J?"  Part="1" 
-AR Path="/5CB55AFA" Ref="J?"  Part="1" 
-F 0 "J?" H 2850 2700 50  0000 C CNN
-F 1 "Audio In" H 2600 2700 50  0000 C CNN
-F 2 "Eurocad:PJ301M-12" H 2700 2860 50  0001 C CNN
-F 3 "~" H 2700 2860 50  0001 C CNN
-	1    2650 2900
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	2950 2800 3600 2800
 Wire Wire Line
@@ -537,10 +333,10 @@ Wire Wire Line
 Wire Wire Line
 	3100 3000 3100 3150
 $Comp
-L power:GND #PWR?
-U 1 1 5CB5871D
+L power:GND #PWR08
+U 1 1 5CB57BF9
 P 3100 3150
-F 0 "#PWR?" H 3100 2900 50  0001 C CNN
+F 0 "#PWR08" H 3100 2900 50  0001 C CNN
 F 1 "GND" H 3105 2977 50  0000 C CNN
 F 2 "" H 3100 3150 50  0001 C CNN
 F 3 "" H 3100 3150 50  0001 C CNN
@@ -549,69 +345,139 @@ F 3 "" H 3100 3150 50  0001 C CNN
 $EndComp
 Text Notes 3600 3000 0    50   ~ 10
 (-5V:5V) TO (0V:3V3)
-$Comp
-L Connector:Barrel_Jack_Switch J?
-U 1 1 5CB5B059
-P 9100 2900
-AR Path="/5CB92368/5CB5B059" Ref="J?"  Part="1" 
-AR Path="/5CB5B059" Ref="J?"  Part="1" 
-F 0 "J?" H 9300 2700 50  0000 C CNN
-F 1 "Audio In" H 9050 2700 50  0000 C CNN
-F 2 "Eurocad:PJ301M-12" H 9150 2860 50  0001 C CNN
-F 3 "~" H 9150 2860 50  0001 C CNN
-	1    9100 2900
-	-1   0    0    1   
-$EndComp
-Text Label 6300 5250 0    50   ~ 0
-ADC2
-Text Label 5450 5250 0    50   ~ 0
-ADC1
-Text Label 4650 5250 0    50   ~ 0
-ADC0
-Wire Wire Line
-	4600 5250 4600 3600
-Wire Wire Line
-	4600 3600 6150 3600
-Wire Wire Line
-	6150 3600 6150 3350
-Wire Wire Line
-	6150 3350 6050 3350
-Connection ~ 4600 5250
-Wire Wire Line
-	4600 5250 4650 5250
-Wire Wire Line
-	6050 3250 6250 3250
-Wire Wire Line
-	6250 3250 6250 3700
-Wire Wire Line
-	6250 3700 5400 3700
-Wire Wire Line
-	5400 3700 5400 5250
-Connection ~ 5400 5250
-Wire Wire Line
-	5400 5250 5450 5250
-Wire Wire Line
-	6250 5250 6250 3800
-Wire Wire Line
-	6250 3800 6350 3800
-Wire Wire Line
-	6350 3800 6350 3150
-Wire Wire Line
-	6350 3150 6050 3150
-Connection ~ 6250 5250
-Wire Wire Line
-	6250 5250 6300 5250
 Wire Wire Line
 	6050 3050 6450 3050
 Wire Wire Line
-	6450 3050 6450 4650
-Wire Wire Line
-	6450 4650 7150 4650
-Wire Wire Line
-	7150 4650 7150 5250
-Connection ~ 7150 5250
-Wire Wire Line
-	7150 5250 7200 5250
-Wire Wire Line
 	4450 2800 5200 2800
+$Comp
+L Connector:Conn_01x10_Male J1
+U 1 1 5CB59CDB
+P 1000 1550
+F 0 "J1" H 950 2150 50  0000 C CNN
+F 1 "Left" H 950 2050 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 1000 1550 50  0001 C CNN
+F 3 "~" H 1000 1550 50  0001 C CNN
+	1    1000 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x10_Male J4
+U 1 1 5CB59CE2
+P 3650 1550
+F 0 "J4" H 3650 2150 50  0000 R CNN
+F 1 "Right" H 3700 2050 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 3650 1550 50  0001 C CNN
+F 3 "~" H 3650 1550 50  0001 C CNN
+	1    3650 1550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 1150 1750 1150
+Wire Wire Line
+	1200 1250 1750 1250
+Wire Wire Line
+	1200 1350 1750 1350
+Wire Wire Line
+	1200 1450 1750 1450
+Wire Wire Line
+	1200 1550 1750 1550
+Wire Wire Line
+	1200 1650 1750 1650
+Wire Wire Line
+	1200 1750 1750 1750
+Wire Wire Line
+	1200 1850 1750 1850
+Wire Wire Line
+	1200 1950 1750 1950
+Wire Wire Line
+	1200 2050 1750 2050
+Text Label 1450 1150 0    50   ~ 0
+AIN0
+Text Label 1450 1250 0    50   ~ 0
+AIN1
+Text Label 1450 1350 0    50   ~ 0
+AIN2
+Text Label 1450 1450 0    50   ~ 0
+AOUT0
+Text Label 1450 1550 0    50   ~ 0
+AOUT1
+Text Label 1450 1650 0    50   ~ 0
+AOUT2
+Wire Wire Line
+	2900 1150 3450 1150
+Wire Wire Line
+	2900 1250 3450 1250
+Wire Wire Line
+	2900 1350 3450 1350
+Wire Wire Line
+	2900 1450 3450 1450
+Wire Wire Line
+	2900 1550 3450 1550
+Wire Wire Line
+	2900 1650 3450 1650
+Wire Wire Line
+	2900 1750 3450 1750
+Wire Wire Line
+	2900 1850 3450 1850
+Wire Wire Line
+	2900 1950 3450 1950
+Wire Wire Line
+	2900 2050 3450 2050
+$Comp
+L power:GND #PWR02
+U 1 1 5CB59D04
+P 1750 2050
+F 0 "#PWR02" H 1750 1800 50  0001 C CNN
+F 1 "GND" H 1755 1877 50  0000 C CNN
+F 2 "" H 1750 2050 50  0001 C CNN
+F 3 "" H 1750 2050 50  0001 C CNN
+	1    1750 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5CB59D0A
+P 2900 2050
+F 0 "#PWR07" H 2900 1800 50  0001 C CNN
+F 1 "GND" H 2905 1877 50  0000 C CNN
+F 2 "" H 2900 2050 50  0001 C CNN
+F 3 "" H 2900 2050 50  0001 C CNN
+	1    2900 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR03
+U 1 1 5CB59D10
+P 2900 1050
+AR Path="/5CB59D10" Ref="#PWR03"  Part="1" 
+AR Path="/5CB08311/5CB59D10" Ref="#PWR?"  Part="1" 
+F 0 "#PWR03" H 2900 900 50  0001 C CNN
+F 1 "+3.3V" H 2915 1223 50  0000 C CNN
+F 2 "" H 2900 1050 50  0001 C CNN
+F 3 "" H 2900 1050 50  0001 C CNN
+	1    2900 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1150 2900 1050
+Text Label 2900 1250 0    50   ~ 0
+POT0
+Text Label 2900 1450 0    50   ~ 0
+POT2
+Text Label 2900 1350 0    50   ~ 0
+POT1
+Text Label 2900 1550 0    50   ~ 0
+POT3
+Text Label 1450 1750 0    50   ~ 0
+DOUT0
+Text Label 1450 1850 0    50   ~ 0
+DOUT1
+Text Label 1450 1950 0    50   ~ 0
+DOUT2
+Text Label 2900 1750 0    50   ~ 0
+DIN0
+Text Label 2900 1850 0    50   ~ 0
+DIN1
+Text Label 2900 1950 0    50   ~ 0
+DIN2
 $EndSCHEMATC
