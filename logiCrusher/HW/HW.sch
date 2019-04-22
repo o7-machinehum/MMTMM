@@ -480,15 +480,4 @@ Text Label 2900 1850 0    50   ~ 0
 DIN1
 Text Label 2900 1950 0    50   ~ 0
 DIN2
-$Comp
-L Regulator_Switching:TPS560200 U?
-U 1 1 5CBCC094
-P 4850 4850
-F 0 "U?" H 4850 5175 50  0000 C CNN
-F 1 "TPS560200" H 4850 5084 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4900 4600 50  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tps560200.pdf" H 4600 4500 50  0001 C CNN
-	1    4850 4850
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
