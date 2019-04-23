@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name eurocad)(type Legacy)(uri ${KIPRJMOD}../eurocad/eurocad.lib)(options "")(descr ""))
-)

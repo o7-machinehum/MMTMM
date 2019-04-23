@@ -301,7 +301,7 @@ F 3 "" H 4150 6500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 5200 2600 850  800 
+S 5200 2600 850  1100
 U 5CB08311
 F0 "MCU" 50
 F1 "MCU.sch" 50
@@ -311,6 +311,12 @@ F4 "ADC0" I R 6050 3350 50
 F5 "ADC1" I R 6050 3250 50 
 F6 "ADC2" I R 6050 3150 50 
 F7 "ADC3" I R 6050 3050 50 
+F8 "D0" O L 5200 3050 50 
+F9 "D1" O L 5200 3150 50 
+F10 "D2" O L 5200 3250 50 
+F11 "D3" O L 5200 3350 50 
+F12 "D4" I L 5200 3450 50 
+F13 "D5" I L 5200 3550 50 
 $EndSheet
 $Sheet
 S 3600 2600 850  800 
@@ -454,17 +460,17 @@ POT1
 Text Label 2900 1550 0    50   ~ 0
 POT3
 Text Label 1450 1750 0    50   ~ 0
-DOUT0
+D0
 Text Label 1450 1850 0    50   ~ 0
-DOUT1
+D1
 Text Label 1450 1950 0    50   ~ 0
-DOUT2
+D2
 Text Label 2900 1750 0    50   ~ 0
-DIN0
+D3
 Text Label 2900 1850 0    50   ~ 0
-DIN1
+D4
 Text Label 2900 1950 0    50   ~ 0
-DIN2
+D5
 Text Label 3350 2800 0    50   ~ 0
 AIN0
 Wire Wire Line
@@ -491,4 +497,28 @@ Wire Wire Line
 	6050 3250 6200 3250
 Wire Wire Line
 	6200 3350 6050 3350
+Wire Wire Line
+	5200 3050 4950 3050
+Wire Wire Line
+	5200 3150 4950 3150
+Wire Wire Line
+	5200 3250 4950 3250
+Wire Wire Line
+	5200 3350 4950 3350
+Wire Wire Line
+	5200 3450 4950 3450
+Wire Wire Line
+	5200 3550 4950 3550
+Text Label 4950 3050 0    50   ~ 0
+D0
+Text Label 4950 3150 0    50   ~ 0
+D1
+Text Label 4950 3250 0    50   ~ 0
+D2
+Text Label 4950 3350 0    50   ~ 0
+D3
+Text Label 4950 3450 0    50   ~ 0
+D4
+Text Label 4950 3550 0    50   ~ 0
+D5
 $EndSCHEMATC

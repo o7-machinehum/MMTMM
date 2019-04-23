@@ -308,13 +308,13 @@ F 3 "~" H 7750 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6650 4450 7550 4450
+	6650 4450 7400 4450
 Wire Wire Line
-	6650 4550 7550 4550
+	6650 4550 7500 4550
 Wire Wire Line
-	6650 4650 7550 4650
+	6650 4650 7050 4650
 Wire Wire Line
-	7550 4750 6650 4750
+	7550 4750 7150 4750
 Wire Wire Line
 	6650 4850 7550 4850
 Text Label 4150 2750 0    50   ~ 0
@@ -491,13 +491,11 @@ Wire Wire Line
 Wire Wire Line
 	7100 4250 7100 4350
 Wire Wire Line
-	7100 4350 7550 4350
+	7100 4350 7300 4350
 Wire Wire Line
 	6650 4150 7200 4150
 Wire Wire Line
 	7200 4150 7200 4250
-Wire Wire Line
-	7200 4250 7550 4250
 Wire Wire Line
 	7550 5150 6650 5150
 $Comp
@@ -562,4 +560,46 @@ F 3 "~" H 1750 1400 50  0001 C CNN
 	1    1750 1400
 	1    0    0    -1  
 $EndComp
+Text HLabel 7200 4100 1    50   Output ~ 0
+D0
+Text HLabel 7300 4100 1    50   Output ~ 0
+D1
+Text HLabel 7400 4100 1    50   Output ~ 0
+D2
+Text HLabel 7500 4100 1    50   Output ~ 0
+D3
+Wire Wire Line
+	7200 4100 7200 4150
+Wire Wire Line
+	7200 4250 7550 4250
+Wire Wire Line
+	7300 4100 7300 4350
+Connection ~ 7300 4350
+Wire Wire Line
+	7300 4350 7550 4350
+Wire Wire Line
+	7400 4100 7400 4450
+Connection ~ 7400 4450
+Wire Wire Line
+	7400 4450 7550 4450
+Connection ~ 7500 4550
+Wire Wire Line
+	7500 4550 7550 4550
+Text HLabel 7050 5250 3    50   Input ~ 0
+D4
+Text HLabel 7150 5250 3    50   Input ~ 0
+D5
+Wire Wire Line
+	7050 5250 7050 4650
+Connection ~ 7050 4650
+Wire Wire Line
+	7050 4650 7550 4650
+Wire Wire Line
+	7150 5250 7150 4750
+Connection ~ 7150 4750
+Wire Wire Line
+	7150 4750 6650 4750
+Connection ~ 7200 4150
+Wire Wire Line
+	7500 4100 7500 4550
 $EndSCHEMATC
