@@ -242,7 +242,7 @@ AR Path="/5CB1AF99" Ref="SW?"  Part="1"
 AR Path="/5CB08311/5CB1AF99" Ref="SW1"  Part="1" 
 F 0 "SW1" V 3396 2802 50  0000 R CNN
 F 1 "SW_Push" V 3305 2802 50  0000 R CNN
-F 2 "" H 3350 3050 50  0001 C CNN
+F 2 "Button_Switch_THT:SW_Tactile_Straight_KSL0Axx1LFTR" H 3350 3050 50  0001 C CNN
 F 3 "" H 3350 3050 50  0001 C CNN
 	1    3350 2850
 	0    -1   -1   0   
@@ -302,7 +302,7 @@ AR Path="/5CB1AFBC" Ref="J?"  Part="1"
 AR Path="/5CB08311/5CB1AFBC" Ref="J5"  Part="1" 
 F 0 "J5" H 7830 4642 50  0000 L CNN
 F 1 "Conn_01x10" H 7830 4551 50  0000 L CNN
-F 2 "" H 7750 4650 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 7750 4650 50  0001 C CNN
 F 3 "~" H 7750 4650 50  0001 C CNN
 	1    7750 4650
 	1    0    0    -1  
@@ -331,7 +331,7 @@ AR Path="/5CB1AFEA" Ref="J?"  Part="1"
 AR Path="/5CB08311/5CB1AFEA" Ref="J6"  Part="1" 
 F 0 "J6" V 8400 2450 50  0000 L CNN
 F 1 "Conn_01x10" V 8500 2450 50  0000 L CNN
-F 2 "" H 8300 2950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 8300 2950 50  0001 C CNN
 F 3 "~" H 8300 2950 50  0001 C CNN
 	1    8300 2950
 	1    0    0    -1  
@@ -373,107 +373,18 @@ F 3 "" H 6950 3250 50  0001 C CNN
 $EndComp
 Text Label 6850 2850 0    50   ~ 0
 ADC3
-Text GLabel 2300 1300 2    50   Output ~ 0
+Text GLabel 2300 1400 2    50   Output ~ 0
 SWCLK
-Text GLabel 2300 1400 2    50   BiDi ~ 0
+Text GLabel 2300 1300 2    50   BiDi ~ 0
 SWDIO
-Text Label 1150 1300 0    50   ~ 0
+Text Label 1050 1400 0    50   ~ 0
 nRST
-$Comp
-L Connector_Generic:Conn_02x05_Odd_Even J?
-U 1 1 5CBA4E93
-P 1750 1500
-AR Path="/5CBA4E93" Ref="J?"  Part="1" 
-AR Path="/5CB08311/5CBA4E93" Ref="J2"  Part="1" 
-F 0 "J2" H 1800 1917 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 1800 1826 50  0000 C CNN
-F 2 "" H 1750 1500 50  0001 C CNN
-F 3 "~" H 1750 1500 50  0001 C CNN
-	1    1750 1500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	1150 1300 1550 1300
-Wire Wire Line
-	1550 1500 1150 1500
-Wire Wire Line
-	1150 1500 1150 1550
-$Comp
-L power:GND #PWR?
-U 1 1 5CBA4E9D
-P 1150 1550
-AR Path="/5CBA4E9D" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CBA4E9D" Ref="#PWR019"  Part="1" 
-F 0 "#PWR019" H 1150 1300 50  0001 C CNN
-F 1 "GND" H 1155 1377 50  0000 C CNN
-F 2 "" H 1150 1550 50  0001 C CNN
-F 3 "" H 1150 1550 50  0001 C CNN
-	1    1150 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5CBA4EA3
-P 2300 1550
-AR Path="/5CBA4EA3" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CBA4EA3" Ref="#PWR022"  Part="1" 
-F 0 "#PWR022" H 2300 1300 50  0001 C CNN
-F 1 "GND" H 2305 1377 50  0000 C CNN
-F 2 "" H 2300 1550 50  0001 C CNN
-F 3 "" H 2300 1550 50  0001 C CNN
-	1    2300 1550
-	1    0    0    -1  
-$EndComp
+	850  1300 1550 1300
 Wire Wire Line
 	2050 1300 2300 1300
 Wire Wire Line
 	2050 1400 2300 1400
-Wire Wire Line
-	2050 1500 2300 1500
-Wire Wire Line
-	2300 1500 2300 1550
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5CBA4EAD
-P 1300 1750
-AR Path="/5CBA4EAD" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CBA4EAD" Ref="#PWR021"  Part="1" 
-F 0 "#PWR021" H 1300 1600 50  0001 C CNN
-F 1 "+3.3V" H 1315 1923 50  0000 C CNN
-F 2 "" H 1300 1750 50  0001 C CNN
-F 3 "" H 1300 1750 50  0001 C CNN
-	1    1300 1750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1300 1750 1300 1800
-Wire Wire Line
-	1300 1800 1400 1800
-Wire Wire Line
-	1400 1800 1400 1600
-Wire Wire Line
-	1400 1600 1550 1600
-Wire Wire Line
-	2050 1600 2150 1600
-Wire Wire Line
-	2150 1600 2150 1800
-Wire Wire Line
-	2150 1800 2550 1800
-Wire Wire Line
-	2550 1800 2550 1750
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5CBA4EBB
-P 2550 1750
-AR Path="/5CBA4EBB" Ref="#PWR?"  Part="1" 
-AR Path="/5CB08311/5CBA4EBB" Ref="#PWR023"  Part="1" 
-F 0 "#PWR023" H 2550 1600 50  0001 C CNN
-F 1 "+3.3V" H 2565 1923 50  0000 C CNN
-F 2 "" H 2550 1750 50  0001 C CNN
-F 3 "" H 2550 1750 50  0001 C CNN
-	1    2550 1750
-	1    0    0    -1  
-$EndComp
 Text HLabel 6850 4350 2    50   Input ~ 0
 Vin
 Text HLabel 7250 2400 1    50   Input ~ 0
@@ -492,8 +403,6 @@ Wire Wire Line
 	7450 2400 7450 2750
 Wire Wire Line
 	7550 2400 7550 2850
-Text Notes 1450 1950 0    50   ~ 0
-Has this been checked?
 Wire Wire Line
 	6650 2550 7250 2550
 Wire Wire Line
@@ -608,4 +517,49 @@ Wire Wire Line
 	3900 3300 3900 3250
 Wire Wire Line
 	3900 3300 4450 3300
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CC2437C
+P 850 1200
+AR Path="/5CC2437C" Ref="#PWR?"  Part="1" 
+AR Path="/5CB08311/5CC2437C" Ref="#PWR0103"  Part="1" 
+F 0 "#PWR0103" H 850 1050 50  0001 C CNN
+F 1 "+3.3V" H 865 1373 50  0000 C CNN
+F 2 "" H 850 1200 50  0001 C CNN
+F 3 "" H 850 1200 50  0001 C CNN
+	1    850  1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 1400 1550 1400
+Wire Wire Line
+	1550 1500 850  1500
+Wire Wire Line
+	850  1500 850  1600
+$Comp
+L power:GND #PWR?
+U 1 1 5CC2EAFE
+P 850 1600
+AR Path="/5CC2EAFE" Ref="#PWR?"  Part="1" 
+AR Path="/5CB08311/5CC2EAFE" Ref="#PWR0104"  Part="1" 
+F 0 "#PWR0104" H 850 1350 50  0001 C CNN
+F 1 "GND" H 855 1427 50  0000 C CNN
+F 2 "" H 850 1600 50  0001 C CNN
+F 3 "" H 850 1600 50  0001 C CNN
+	1    850  1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  1300 850  1200
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J2
+U 1 1 5CC38546
+P 1750 1400
+F 0 "J2" H 1800 1717 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 1800 1626 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 1750 1400 50  0001 C CNN
+F 3 "~" H 1750 1400 50  0001 C CNN
+	1    1750 1400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
