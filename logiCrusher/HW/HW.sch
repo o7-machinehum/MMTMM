@@ -346,7 +346,7 @@ U 1 1 5CB59CDB
 P 1000 1550
 F 0 "J1" H 950 2150 50  0000 C CNN
 F 1 "Left" H 950 2050 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 1000 1550 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x10_P2.54mm_Vertical" H 1000 1550 50  0001 C CNN
 F 3 "~" H 1000 1550 50  0001 C CNN
 	1    1000 1550
 	1    0    0    -1  
@@ -357,7 +357,7 @@ U 1 1 5CB59CE2
 P 3650 1550
 F 0 "J4" H 3650 2150 50  0000 R CNN
 F 1 "Right" H 3700 2050 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 3650 1550 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x10_P2.54mm_Vertical" H 3650 1550 50  0001 C CNN
 F 3 "~" H 3650 1550 50  0001 C CNN
 	1    3650 1550
 	-1   0    0    -1  

@@ -234,21 +234,6 @@ Text GLabel 6800 3850 2    50   Input ~ 0
 SWCLK
 Text GLabel 6800 3950 2    50   BiDi ~ 0
 SWDIO
-$Comp
-L Switch:SW_Push SW?
-U 1 1 5CB1AF99
-P 3350 2850
-AR Path="/5CB1AF99" Ref="SW?"  Part="1" 
-AR Path="/5CB08311/5CB1AF99" Ref="SW1"  Part="1" 
-F 0 "SW1" V 3396 2802 50  0000 R CNN
-F 1 "SW_Push" V 3305 2802 50  0000 R CNN
-F 2 "Button_Switch_THT:SW_Tactile_Straight_KSL0Axx1LFTR" H 3350 3050 50  0001 C CNN
-F 3 "" H 3350 3050 50  0001 C CNN
-	1    3350 2850
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3350 2650 3350 2550
 Wire Wire Line
 	3350 3050 3350 3100
 $Comp
@@ -283,7 +268,6 @@ Wire Wire Line
 	3800 2900 3800 3050
 Wire Wire Line
 	3800 3050 3350 3050
-Connection ~ 3350 3050
 Wire Wire Line
 	5250 2750 4750 2750
 Wire Wire Line
@@ -449,8 +433,6 @@ F 3 "~" H 4600 3300 50  0001 C CNN
 	1    4600 3300
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	3350 2550 3800 2550
 Connection ~ 3800 2550
 Wire Wire Line
 	3800 2550 5250 2550
@@ -602,4 +584,48 @@ Wire Wire Line
 Connection ~ 7200 4150
 Wire Wire Line
 	7500 4100 7500 4550
+$Comp
+L eurocad:TL1105SPF250Q SW1
+U 1 1 5CC32E6D
+P 2500 2900
+F 0 "SW1" V 2454 3228 50  0000 L CNN
+F 1 "TL1105SPF250Q" V 2545 3228 50  0000 L CNN
+F 2 "Eurocad:TL1105SPF250Q" H 2500 2900 50  0001 C CNN
+F 3 "" H 2500 2900 50  0000 C CNN
+	1    2500 2900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2300 2600 2300 2550
+Wire Wire Line
+	2300 2550 2700 2550
+Wire Wire Line
+	2700 2600 2700 2550
+Connection ~ 2700 2550
+Wire Wire Line
+	2700 2550 3800 2550
+Wire Wire Line
+	2300 3200 2300 3300
+Wire Wire Line
+	2300 3300 2500 3300
+Wire Wire Line
+	2700 3300 2700 3200
+$Comp
+L power:GND #PWR?
+U 1 1 5CC4367C
+P 2500 3400
+AR Path="/5CC4367C" Ref="#PWR?"  Part="1" 
+AR Path="/5CB08311/5CC4367C" Ref="#PWR0105"  Part="1" 
+F 0 "#PWR0105" H 2500 3150 50  0001 C CNN
+F 1 "GND" H 2505 3227 50  0000 C CNN
+F 2 "" H 2500 3400 50  0001 C CNN
+F 3 "" H 2500 3400 50  0001 C CNN
+	1    2500 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 3400 2500 3300
+Connection ~ 2500 3300
+Wire Wire Line
+	2500 3300 2700 3300
 $EndSCHEMATC
