@@ -3,6 +3,7 @@
 
 ADC_HandleTypeDef hadc1;
 DAC_HandleTypeDef hdac1;
+UART_HandleTypeDef huart2;
 SDADC_HandleTypeDef hsdadc1;
 osThreadId defaultTaskHandle;
 
@@ -11,7 +12,20 @@ static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_DAC1_Init(void);
 static void MX_SDADC1_Init(void);
+static void MX_USART2_UART_Init(void);
 void StartDefaultTask(void const * argument);
+
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef* uart){
+  int i;
+  i++;
+
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef* uart){
+  int i(0);
+  i++;
+
+}
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
   volatile int conv = HAL_ADC_GetValue(hadc);
@@ -42,9 +56,18 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_DAC1_Init();
+  MX_USART2_UART_Init();
   MX_SDADC1_Init();
+ 
+  uint8_t data('s');
+  uint16_t size(1);
+
+  // HAL_ADC_Start_IT(&hadc1);
   
-  HAL_ADC_Start_IT(&hadc1);
+  HAL_UART_Transmit(&huart2, &data, size, 1000);
+  
+  // HAL_UART_Receive_IT(&huart2, &data, size);
+  
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
@@ -219,6 +242,24 @@ static void MX_GPIO_Init(void)
 
 }
 
+static void MX_USART2_UART_Init(void)
+{
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_8;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+}
 /**
   * @brief  Function implementing the defaultTask thread.
   * @param  argument: Not used 
