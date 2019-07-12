@@ -1,12 +1,12 @@
 clc; clear;
 
-% pkg install -forge control
+%run pkg install -forge control
 pkg load signal
 pkg load control
 
 s = tf('s')
 
-R1 = 2.2e6;
+R1 = 1e6;
 R4 = 1e3;
 C = 68e-9;
 
