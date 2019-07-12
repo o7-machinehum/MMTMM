@@ -1,6 +1,6 @@
 clc; clear;
 
-% pkg install -forge control
+%run pkg install -forge control
 pkg load signal
 pkg load control
 
