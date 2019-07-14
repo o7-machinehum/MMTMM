@@ -6,20 +6,19 @@ pkg load control
 
 s = tf('s');
 
-R1 = 1e6;
-R4 = 1e3;
+R6 = 1e6; % R6
+R7 = 1e3; % R7
 C = 68e-9;
+C1 = C2 = C;
 
 a = 1;
-R3 = R1;
-C1 = C2 = C;
 
 %           wn^2
 % ------------------------
 % s^2 + 2*Zeta*wn*s + wn^2
 
-num = -(a/(R4*C1)*s);
-denum = (s^2 + (s/R3)*(1/C1 + 1/C2) + 1/(R3*R4*C1*C2));
+num = -(a/(R7*C1)*s);
+denum = (s^2 + (s/R6)*(1/C1 + 1/C2) + 1/(R6*R7*C1*C2));
 
 G = num / denum
 

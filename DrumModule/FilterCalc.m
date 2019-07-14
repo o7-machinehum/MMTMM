@@ -1,7 +1,7 @@
 format short eng;
 
-flow = 20; % 20hz
-fhigh = 20e3; % 20khz
+flow = 80; % 20hz
+fhigh = 16e3; % 20khz
 
 frange = flow : 0.1 : fhigh;
 C = 10e-9; % 10nF
