@@ -27,25 +27,38 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef* uart){
 
 }
 
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
-  volatile int conv = HAL_ADC_GetValue(hadc);
-  volatile uint8_t inp = 0; // Input from DIO
-  
-  conv = conv >> 8;
-  
-  /* Output the quantised signal*/
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, static_cast<GPIO_PinState>((conv >> 0) & 1));
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, static_cast<GPIO_PinState>((conv >> 1) & 1));
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, static_cast<GPIO_PinState>((conv >> 2) & 1));
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, static_cast<GPIO_PinState>((conv >> 3) & 1));
+static const int last(1), now(2);
+static volatile int conv[2] = {0};
 
-  /*Read in the signal*/
-  inp = (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0) << 0);
-  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_1) << 1);
-  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_2) << 2);
-  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) << 3);
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+  static bool first(true);
+  int out(0);
+
+  if(first){
+    conv[now] = HAL_ADC_GetValue(hadc);
+    first = false; 
+    return;
+  }
+
+  out = HAL_ADC_GetValue(hadc);
   
-  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, (inp * 17));
+  //volatile uint8_t inp = 0; // Input from DIO
+  //
+  //conv = conv >> 8;
+  //
+  ///* Output the quantised signal*/
+  //HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, static_cast<GPIO_PinState>((conv >> 0) & 1));
+  //HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, static_cast<GPIO_PinState>((conv >> 1) & 1));
+  //HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, static_cast<GPIO_PinState>((conv >> 2) & 1));
+  //HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, static_cast<GPIO_PinState>((conv >> 3) & 1));
+
+  ///*Read in the signal*/
+  //inp = (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0) << 0);
+  //inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_1) << 1);
+  //inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_2) << 2);
+  //inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) << 3);
+  
+  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, out);
 }
 
 int main(void)
@@ -59,15 +72,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
  
-  uint8_t data('s');
-  uint16_t size(1);
-
-  // HAL_ADC_Start_IT(&hadc1);
-  
-  HAL_UART_Transmit(&huart2, &data, size, 1000);
-  
-  // HAL_UART_Receive_IT(&huart2, &data, size);
-  
+  HAL_ADC_Start_IT(&hadc1);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
