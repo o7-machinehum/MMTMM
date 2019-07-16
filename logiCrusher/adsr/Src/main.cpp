@@ -15,18 +15,6 @@ static void MX_SDADC1_Init(void);
 static void MX_USART2_UART_Init(void);
 void StartDefaultTask(void const * argument);
 
-void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef* uart){
-  int i;
-  i++;
-
-}
-
-void HAL_UART_TxCpltCallback(UART_HandleTypeDef* uart){
-  int i(0);
-  i++;
-
-}
-
 static const int last(1), now(2);
 static volatile int conv[2] = {0};
 
@@ -72,8 +60,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
  
-  HAL_ADC_Start_IT(&hadc1);
-  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
+  HAL_SDADC_Start_IT(&hsdadc1);
+  // HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
