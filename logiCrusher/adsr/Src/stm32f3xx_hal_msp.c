@@ -219,12 +219,8 @@ void HAL_SDADC_MspInit(SDADC_HandleTypeDef* hsdadc)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   if(hsdadc->Instance==SDADC1)
   {
-  /* USER CODE BEGIN SDADC1_MspInit 0 */
-
-  /* USER CODE END SDADC1_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_SDADC1_CLK_ENABLE();
-  
     __HAL_RCC_GPIOB_CLK_ENABLE();
     /**SDADC1 GPIO Configuration    
     PB2     ------> SDADC1_AIN4P 
@@ -233,12 +229,10 @@ void HAL_SDADC_MspInit(SDADC_HandleTypeDef* hsdadc)
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /* USER CODE BEGIN SDADC1_MspInit 1 */
-
-  /* USER CODE END SDADC1_MspInit 1 */
+    
+    HAL_NVIC_SetPriority(SDADC1_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(SDADC1_IRQn);
   }
-
 }
 
 /**
