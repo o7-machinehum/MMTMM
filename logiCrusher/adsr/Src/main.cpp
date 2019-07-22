@@ -18,39 +18,6 @@ void StartDefaultTask(void const * argument);
 static const int last(1), now(2);
 static volatile int conv[2] = {0};
 
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
-  return;
-
-  static bool first(true);
-  int out(0);
-
-  if(first){
-    conv[now] = HAL_ADC_GetValue(hadc);
-    first = false; 
-    return;
-  }
-
-  out = HAL_ADC_GetValue(hadc);
-  
-  //volatile uint8_t inp = 0; // Input from DIO
-  //
-  //conv = conv >> 8;
-  //
-  ///* Output the quantised signal*/
-  //HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, static_cast<GPIO_PinState>((conv >> 0) & 1));
-  //HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, static_cast<GPIO_PinState>((conv >> 1) & 1));
-  //HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, static_cast<GPIO_PinState>((conv >> 2) & 1));
-  //HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, static_cast<GPIO_PinState>((conv >> 3) & 1));
-
-  ///*Read in the signal*/
-  //inp = (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0) << 0);
-  //inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_1) << 1);
-  //inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_2) << 2);
-  //inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) << 3);
-  
-  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, out);
-}
-
 void HAL_SDADC_ConvCpltCallback(SDADC_HandleTypeDef* hsdadc){
   static volatile uint32_t out(0); 
   out = HAL_SDADC_GetValue(hsdadc) + 32768;
