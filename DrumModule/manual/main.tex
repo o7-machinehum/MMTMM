@@ -1,0 +1,72 @@
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+\begin{document}
+
+\begin{minipage}[t]{0.45\textwidth} % 45% of the page width for name
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{MMTMM}}}}} % First name
+	
+	\vspace{6pt}
+	
+	{\huge BOB BASS} % Career or current job title
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the first row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\icon{MapMarker}{12}{Black Mesa East}\\
+	\icon{Phone}{12}{+1 123 456 789}\\
+	\icon{At}{12}{\href{mailto:alyx@vance.me}{alyx@vance.me}}\\	
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the second row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\icon{Globe}{12}{\href{https://alyx.vance.me}{alyx.vance.me}}\\
+	\icon{Github}{12}{\href{https://github.com/alyxvance}{github.com/alyxvance}}\\
+	\icon{Twitter}{12}{\href{https://twitter.com/@alyxvance}{@alyxvance}}\\
+\end{minipage}
+
+\vspace{0.5cm}
+
+\cvsect{Who Am I?}
+
+\begin{minipage}[t]{0.4\textwidth} % 40% of the page width for the introduction text
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+The BOB BASS is a 100\% open source drum modules inspired from the 808 Bass drum. It features the same drum core as the 808 and various other features, such as filters, tuning and an \textcolor{red}{overdrive}.
+
+\end{minipage}
+
+\hfill % Whitespace between
+\begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	\begin{barchart}{5.5}
+		\baritem{JavaScript}{60}
+		\baritem{PHP}{100}
+		\baritem{SASS/LESS}{70}
+		\baritem{Bootstrap}{70}
+		\baritem{Git}{40}
+		\baritem{LaTeX}{60}
+	\end{barchart}
+
+\end{minipage}
+
+\cvsect{Getting Started}
+
+The BOB BASS requires power. Then post a picture, then outline what all the knobs do and what to plug into.
+
+\cvsect{Schematic}
+
+\cvsect{Transfer Function for Drum Core}
+
+Equation \ref{tfd} is the transfer function for the drum, while Equation \ref{tfn} is the standard form.
+\begin{equation}
+G(s) = \frac{\frac{-s}{R_7C_1}}{s^2 + \frac{s}{R_6}(\frac{1}{C_1} + \frac{1}{C_2}) + \frac{1}{R_6R_7C_1C_2}}
+\label{tfd}
+\end{equation}
+
+\begin{equation}
+G(s) = \frac{k\cdot w_n^2}{s^2 + 2\zeta w_n s + w_n^2}
+\label{tfn}
+\end{equation}
+
+\end{document}
