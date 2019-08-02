@@ -6,7 +6,8 @@ pkg load control
 
 s = tf('s');
 
-R6 = 1e6; % R6
+% R6 = 1e6; % R6
+R6 = 500e3; % R6
 R7 = 1e3; % R7
 C = 68e-9;
 C1 = C2 = C;

@@ -14,3 +14,4 @@
 5. Change RV2 to 1M.
 6. R4 to 100k.
 7. R11/R12 to 1k. They were popped incorrectly.
+8. Also RV2 -> 1M (Not in schematic)
