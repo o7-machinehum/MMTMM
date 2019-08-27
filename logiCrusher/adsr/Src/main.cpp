@@ -1,5 +1,6 @@
 #include "main.h"
 #include "cmsis_os.h"
+#include "adsr.h"
 
 ADC_HandleTypeDef hadc1;
 DAC_HandleTypeDef hdac1;
@@ -18,22 +19,13 @@ void StartDefaultTask(void const * argument);
 static const int last(0), now(1);
 static volatile int conv[2] = {0};
 
-class adsr
-{
-  uint16_t a;           // Relative Value for Attack
-  uint16_t d;           // Relative Value for Decay
-  uint16_t s;           // Relative Value for Sustain
-  uint16_t r;           // Relative Value for Release 
-  
-  uint32_t globalTimer; // Global timer for seq.
-
-public:
-  void tick(void);      // Call this at every tick
-
-};
-
 void HAL_SDADC_ConvCpltCallback(SDADC_HandleTypeDef* hsdadc){
-  // conv[now] = HAL_SDADC_GetValue(hsdadc);
+  bool trig(false);
+  conv[now] = HAL_SDADC_GetValue(hsdadc);
+ 
+  if((conv[last] + 100) < conv[now])
+    trig = true;
+
   int out = HAL_SDADC_GetValue(hsdadc) + 32768;
 
   HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_L, out); 
