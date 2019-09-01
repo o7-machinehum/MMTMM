@@ -11,7 +11,7 @@ TARGET = adsr
 # debug build?
 DEBUG = 1
 # optimization
-OPT = -O3
+OPT = -O0
 
 
 #######################################
@@ -26,6 +26,7 @@ BUILD_DIR = build
 # Cpp sources
 CPP_SOURCES =  \
 Src/main.cpp \
+Src/new.cpp \
 Src/adsr.cpp 
 
 # C sources

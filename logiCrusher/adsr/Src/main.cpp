@@ -1,6 +1,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "adsr.h"
+#include "clock.h"
 
 ADC_HandleTypeDef hadc1;
 DAC_HandleTypeDef hdac1;
@@ -16,19 +17,29 @@ static void MX_SDADC1_Init(void);
 static void MX_USART2_UART_Init(void);
 void StartDefaultTask(void const * argument);
 
-static const int last(0), now(1);
-static volatile int conv[2] = {0};
+static adsr* adsr_p(NULL);
+
+enum {
+  now = 0,
+  last 
+};
+
+static volatile uint32_t conv[2] = {0,~0};
+static float hyst(1.3);
+static int dataOut(0);
 
 void HAL_SDADC_ConvCpltCallback(SDADC_HandleTypeDef* hsdadc){
-  bool trig(false);
   conv[now] = HAL_SDADC_GetValue(hsdadc);
  
-  if((conv[last] + 100) < conv[now])
-    trig = true;
+  if( conv[now] > conv[last] * hyst )
+    adsr_p->trig();
 
-  int out = HAL_SDADC_GetValue(hsdadc) + 32768;
+  if( conv[now]*hyst < conv[last] )
+    adsr_p->drop();
+  
+  dataOut = adsr_p->eval()*32768;
 
-  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_L, out); 
+  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_L, dataOut); 
   conv[last] = conv[now]; 
 }
 
@@ -37,12 +48,19 @@ int main(void)
   HAL_Init();
   SystemClock_Config();
 
+  adsr* _adsr = new adsr(&adsr_p);
+
+  _adsr->set_a(1);
+  _adsr->set_d(1);
+  _adsr->set_s(0.5);
+  _adsr->set_r(1);
+  
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_DAC1_Init();
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
- 
+
   HAL_SDADC_Start_IT(&hsdadc1);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   
@@ -56,49 +74,15 @@ int main(void)
   }
 }
 
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
-void SystemClock_Config(void)
+void StartDefaultTask(void const * argument)
 {
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-
-  /** Initializes the CPU, AHB and APB busses clocks 
-  */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  for(;;)
   {
-    Error_Handler();
+    osDelay(1);
   }
-  /** Initializes the CPU, AHB and APB busses clocks 
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC1|RCC_PERIPHCLK_SDADC;
-  PeriphClkInit.SdadcClockSelection = RCC_SDADCSYSCLK_DIV2;
-  PeriphClkInit.Adc1ClockSelection = RCC_ADC1PCLK2_DIV2;
-
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  HAL_PWREx_EnableSDADC(PWR_SDADC_ANALOG1);
 }
+
+
 
 /**
   * @brief ADC1 Initialization Function
@@ -239,19 +223,8 @@ static void MX_USART2_UART_Init(void)
   }
 
 }
-/**
-  * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used 
-  * @retval None
-  */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
-{
-  for(;;)
-  {
-    osDelay(1);
-  }
-}
+
+
 
 /**
   * @brief  Period elapsed callback in non blocking mode
