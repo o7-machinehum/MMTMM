@@ -49,18 +49,13 @@ int main(void)
   SystemClock_Config();
 
   adsr* _adsr = new adsr(&adsr_p);
-
-  _adsr->set_a(1);
-  _adsr->set_d(1);
-  _adsr->set_s(0.5);
-  _adsr->set_r(1);
   
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_DAC1_Init();
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
-
+  
   HAL_SDADC_Start_IT(&hsdadc1);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   
@@ -76,8 +71,16 @@ int main(void)
 
 void StartDefaultTask(void const * argument)
 {
+  volatile uint32_t k(0);
+    HAL_ADC_Start(&hadc1);
   for(;;)
   {
+    HAL_ADC_PollForConversion(&hadc1, 1000);
+    adsr_p->set_a((float)HAL_ADC_GetValue(&hadc1)/4096);
+    adsr_p->set_d((float)HAL_ADC_GetValue(&hadc1)/4096);
+    adsr_p->set_s((float)HAL_ADC_GetValue(&hadc1)/4096);
+    adsr_p->set_r((float)HAL_ADC_GetValue(&hadc1)/4096);
+  
     osDelay(1);
   }
 }
@@ -86,8 +89,7 @@ void StartDefaultTask(void const * argument)
 
 /**
   * @brief ADC1 Initialization Function
-  * @param None
-  * @retval None
+  * POTS: PA0:PA3 
   */
 static void MX_ADC1_Init(void)
 {
@@ -100,15 +102,41 @@ static void MX_ADC1_Init(void)
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.NbrOfConversion = 4;
+  
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
     Error_Handler();
   }
+  
   /** Configure Regular Channel 
   */
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  
+  sConfig.Channel = ADC_CHANNEL_1;
+  sConfig.Rank = ADC_REGULAR_RANK_2;
+  sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  
+  sConfig.Channel = ADC_CHANNEL_2;
+  sConfig.Rank = ADC_REGULAR_RANK_3;
+  sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  sConfig.Channel = ADC_CHANNEL_3;
+  sConfig.Rank = ADC_REGULAR_RANK_4;
   sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
@@ -223,8 +251,6 @@ static void MX_USART2_UART_Init(void)
   }
 
 }
-
-
 
 /**
   * @brief  Period elapsed callback in non blocking mode
