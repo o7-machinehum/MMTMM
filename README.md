@@ -1,8 +1,8 @@
 # MMM 
-Makers Make Music. We're designing and building 100% open source eurorack modules, we would love to hear (from you)[https://docs.google.com/forms/d/e/1FAIpQLSeDmKGT8nFPX62po_9shZNs7qYtOch9zK6xhK_ntmRhs4zbUg/viewform?vc=0&c=0&w=1]!
+Makers Make Music. We're designing and building 100% open source eurorack modules, we would love to hear [from you](https://docs.google.com/forms/d/e/1FAIpQLSeDmKGT8nFPX62po_9shZNs7qYtOch9zK6xhK_ntmRhs4zbUg/viewform?vc=0&c=0&w=1)!
 
 ## Drum (Bob Bass)
-The Bob takes inspiration from the 808 service manual. This guy has knobs all over the place and a HPF, LPF, overdrive and control over the resonance and decay.
+The [Bob Bass](https://github.com/Machine-Hum/MMTMM/tree/master/DrumModule) takes inspiration from the 808 service manual. This guy has knobs all over the place: HPF, LPF, overdrive and control over the resonance and decay.
 ![alt text](DrumModule/images/BobBass.jpg)
 
 ## Logic Crusher
