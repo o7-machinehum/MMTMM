@@ -7,8 +7,8 @@ The [Bob Bass](https://github.com/Machine-Hum/MMTMM/tree/master/DrumModule) take
 ![alt text](DrumModule/images/BobBass.jpg)
 
 ## Logic Crusher
-This is a design that conditions synth level audio into 4bit digital. There 4 bits are then exposed in a breadboard style area which allows the user to patch up digital logic. Then the 4bit audio is converted back into the analog domain. It's possible to make some very complex sounds. Here is the overall design...
-![alt text](logiCrusher/Images/LC-2.png)
+This is a design that conditions synth level audio into 4bit digital. These signals can then be routed through standard TTL logic and then converted back into audio. It's possible to make some very complex sounds. Here is the faceplate, patching is done through the back of the panel. 
+![alt text](logiCrusher/Images/FacePlate.JPG)
 
 Some wavforms, the blue is the input and the yellow is the output. <br>
 ![alt text](logiCrusher/Images/SDS00001.BMP)
