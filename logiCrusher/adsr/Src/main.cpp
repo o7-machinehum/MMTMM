@@ -26,6 +26,7 @@ enum {
 };
 
 volatile uint16_t adcRes[4] = {0};
+
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
 
@@ -64,7 +65,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
   
-  HAL_ADC_Start(&hadc1);
   HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adcRes, 4);
 
   HAL_SDADC_Start_IT(&hsdadc1);
@@ -109,9 +109,7 @@ static void MX_ADC1_Init(void)
   ADC_ChannelConfTypeDef sConfig = {0};
 
   /* DMA1_Channel1_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
-  
+    
   hadc1.Instance = ADC1;
   hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
   hadc1.Init.ContinuousConvMode = ENABLE;
