@@ -8,6 +8,7 @@ DAC_HandleTypeDef hdac1;
 UART_HandleTypeDef huart2;
 SDADC_HandleTypeDef hsdadc1;
 osThreadId defaultTaskHandle;
+DMA_HandleTypeDef hdma_adc1;
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -23,6 +24,13 @@ enum {
   now = 0,
   last 
 };
+
+volatile uint16_t adcRes[4] = {0};
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+{
+
+
+}
 
 static volatile uint32_t conv[2] = {0,~0};
 static float hyst(1.3);
@@ -43,7 +51,6 @@ void HAL_SDADC_ConvCpltCallback(SDADC_HandleTypeDef* hsdadc){
   conv[last] = conv[now]; 
 }
 
-uint16_t adcRes[4] = {0};
 int main(void)
 {
   HAL_Init();
@@ -57,6 +64,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
   
+  HAL_ADC_Start(&hadc1);
   HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adcRes, 4);
 
   HAL_SDADC_Start_IT(&hsdadc1);
@@ -75,15 +83,15 @@ int main(void)
 void StartDefaultTask(void const * argument)
 {
   volatile uint32_t k(0);
-    HAL_ADC_Start(&hadc1);
+    //HAL_ADC_Start(&hadc1);
   for(;;)
   {
-    if(HAL_ADC_PollForConversion(&hadc1, 1000) == HAL_OK){
-      adsr_p->set_a((float)HAL_ADC_GetValue(&hadc1)/4096);
-      adsr_p->set_d((float)HAL_ADC_GetValue(&hadc1)/4096);
-      adsr_p->set_s((float)HAL_ADC_GetValue(&hadc1)/4096);
-      adsr_p->set_r((float)HAL_ADC_GetValue(&hadc1)/4096);
-    }
+    // if(HAL_ADC_PollForConversion(&hadc1, 1000) == HAL_OK){
+    //   adsr_p->set_a((float)HAL_ADC_GetValue(&hadc1)/4096);
+    //   adsr_p->set_d((float)HAL_ADC_GetValue(&hadc1)/4096);
+    //   adsr_p->set_s((float)HAL_ADC_GetValue(&hadc1)/4096);
+    //   adsr_p->set_r((float)HAL_ADC_GetValue(&hadc1)/4096);
+    // }
 
     osDelay(1);
   }

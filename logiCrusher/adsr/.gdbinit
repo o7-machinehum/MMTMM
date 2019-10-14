@@ -6,9 +6,9 @@ monitor reset halt
 load
 
 b HardFault_Handler
-b main.cpp:83
-
-while (1)
-  p *adsr_p
-  c
-end
+# # b main.cpp:83
+# # 
+# # while (1)
+# #   p *adsr_p
+# #   c
+# # end
