@@ -43,6 +43,7 @@ void HAL_SDADC_ConvCpltCallback(SDADC_HandleTypeDef* hsdadc){
   conv[last] = conv[now]; 
 }
 
+uint16_t adcRes[4] = {0};
 int main(void)
 {
   HAL_Init();
@@ -56,6 +57,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
   
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adcRes, 4);
+
   HAL_SDADC_Start_IT(&hsdadc1);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   
@@ -75,12 +78,13 @@ void StartDefaultTask(void const * argument)
     HAL_ADC_Start(&hadc1);
   for(;;)
   {
-    HAL_ADC_PollForConversion(&hadc1, 1000);
-    adsr_p->set_a((float)HAL_ADC_GetValue(&hadc1)/4096);
-    adsr_p->set_d((float)HAL_ADC_GetValue(&hadc1)/4096);
-    adsr_p->set_s((float)HAL_ADC_GetValue(&hadc1)/4096);
-    adsr_p->set_r((float)HAL_ADC_GetValue(&hadc1)/4096);
-  
+    if(HAL_ADC_PollForConversion(&hadc1, 1000) == HAL_OK){
+      adsr_p->set_a((float)HAL_ADC_GetValue(&hadc1)/4096);
+      adsr_p->set_d((float)HAL_ADC_GetValue(&hadc1)/4096);
+      adsr_p->set_s((float)HAL_ADC_GetValue(&hadc1)/4096);
+      adsr_p->set_r((float)HAL_ADC_GetValue(&hadc1)/4096);
+    }
+
     osDelay(1);
   }
 }
@@ -96,6 +100,10 @@ static void MX_ADC1_Init(void)
 
   ADC_ChannelConfTypeDef sConfig = {0};
 
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+  
   hadc1.Instance = ADC1;
   hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
   hadc1.Init.ContinuousConvMode = ENABLE;
