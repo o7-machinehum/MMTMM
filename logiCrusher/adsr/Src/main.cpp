@@ -12,6 +12,7 @@ DMA_HandleTypeDef hdma_adc1;
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_DAC1_Init(void);
 static void MX_SDADC1_Init(void);
@@ -25,7 +26,7 @@ enum {
   last 
 };
 
-volatile uint16_t adcRes[4] = {0};
+volatile uint16_t adcRes[8] = {0};
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
@@ -61,12 +62,13 @@ int main(void)
   
   MX_GPIO_Init();
   MX_ADC1_Init();
+  MX_DMA_Init();
   MX_DAC1_Init();
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
   
   HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adcRes, 4);
-
+  
   HAL_SDADC_Start_IT(&hsdadc1);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   
@@ -117,6 +119,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.NbrOfConversion = 4;
+  // hadc1.Init.EOCSelection = EOC_SEQ_CONV;
   
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
@@ -263,8 +266,27 @@ static void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
 
 }
+
+/** 
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void) 
+{
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+
+}
+
 
 /**
   * @brief  Period elapsed callback in non blocking mode
