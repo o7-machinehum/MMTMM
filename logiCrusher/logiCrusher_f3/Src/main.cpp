@@ -27,23 +27,44 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef* uart){
 
 }
 
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
-  volatile int conv = HAL_ADC_GetValue(hadc);
+// void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+//   volatile int conv = HAL_ADC_GetValue(hadc);
+//   volatile uint8_t inp = 0; // Input from DIO
+//   
+//   conv = conv >> 8;
+//   
+//   /* Output the quantised signal*/
+//   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, static_cast<GPIO_PinState>((conv >> 0) & 1));
+//   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, static_cast<GPIO_PinState>((conv >> 1) & 1));
+//   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, static_cast<GPIO_PinState>((conv >> 2) & 1));
+//   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, static_cast<GPIO_PinState>((conv >> 3) & 1));
+// 
+//   /*Read in the signal*/
+//   inp =  (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5) << 0);
+//   inp |= (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_6) << 1);
+//   inp |= (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) << 2);
+//   inp |= (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8) << 3);
+//   
+//   HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, (inp * 17));
+// }
+
+void HAL_SDADC_ConvCpltCallback(SDADC_HandleTypeDef* hsdadc){
+  volatile int conv = HAL_SDADC_GetValue(hsdadc);
   volatile uint8_t inp = 0; // Input from DIO
   
   conv = conv >> 8;
   
   /* Output the quantised signal*/
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, static_cast<GPIO_PinState>((conv >> 0) & 1));
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, static_cast<GPIO_PinState>((conv >> 1) & 1));
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, static_cast<GPIO_PinState>((conv >> 2) & 1));
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, static_cast<GPIO_PinState>((conv >> 3) & 1));
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, static_cast<GPIO_PinState>((conv >> 0) & 1));
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, static_cast<GPIO_PinState>((conv >> 1) & 1));
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, static_cast<GPIO_PinState>((conv >> 2) & 1));
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, static_cast<GPIO_PinState>((conv >> 3) & 1));
 
   /*Read in the signal*/
-  inp = (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_0) << 0);
-  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_1) << 1);
-  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_2) << 2);
-  inp |= (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) << 3);
+  inp =  (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5) << 0);
+  inp |= (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_6) << 1);
+  inp |= (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) << 2);
+  inp |= (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8) << 3);
   
   HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, (inp * 17));
 }
@@ -54,17 +75,15 @@ int main(void)
   SystemClock_Config();
 
   MX_GPIO_Init();
-  MX_ADC1_Init();
+  // MX_ADC1_Init();
   MX_DAC1_Init();
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
  
-  uint8_t data('s');
-  uint16_t size(1);
-
-  // HAL_ADC_Start_IT(&hadc1);
+  // HAL_SDADC_Start_IT(&hadc1);
+  HAL_SDADC_Start_IT(&hsdadc1);
   
-  HAL_UART_Transmit(&huart2, &data, size, 1000);
+  // HAL_UART_Transmit(&huart2, &data, size, 1000);
   
   // HAL_UART_Receive_IT(&huart2, &data, size);
   
@@ -193,16 +212,19 @@ static void MX_SDADC1_Init(void)
   hsdadc1.Init.FastConversionMode = SDADC_FAST_CONV_DISABLE;
   hsdadc1.Init.SlowClockMode = SDADC_SLOW_CLOCK_DISABLE;
   hsdadc1.Init.ReferenceVoltage = SDADC_VREF_EXT;
+  
   if (HAL_SDADC_Init(&hsdadc1) != HAL_OK)
   {
     Error_Handler();
   }
+  
   /** Set parameters for SDADC configuration 0 Register 
   */
   ConfParamStruct.InputMode = SDADC_INPUT_MODE_SE_OFFSET;
   ConfParamStruct.Gain = SDADC_GAIN_1;
   ConfParamStruct.CommonMode = SDADC_COMMON_MODE_VSSA;
   ConfParamStruct.Offset = 0;
+  
   if (HAL_SDADC_PrepareChannelConfig(&hsdadc1, SDADC_CONF_INDEX_0, &ConfParamStruct) != HAL_OK)
   {
     Error_Handler();
@@ -218,27 +240,27 @@ static void MX_GPIO_Init(void)
 {
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOE_CLK_ENABLE();
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   
-  // C
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
-  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1;
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  
+  GPIO_InitStruct.Pin = GPIO_PIN_4 | GPIO_PIN_3 | GPIO_PIN_0 | GPIO_PIN_1;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_8, GPIO_PIN_RESET);
   
-  // E
-  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Pin = GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 
