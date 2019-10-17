@@ -18,13 +18,11 @@ void StartDefaultTask(void const * argument);
 void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef* uart){
   int i;
   i++;
-
 }
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef* uart){
   int i(0);
   i++;
-
 }
 
 // void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
@@ -49,10 +47,10 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef* uart){
 // }
 
 void HAL_SDADC_ConvCpltCallback(SDADC_HandleTypeDef* hsdadc){
-  volatile int conv = HAL_SDADC_GetValue(hsdadc);
+  volatile int32_t conv = HAL_SDADC_GetValue(hsdadc);
   volatile uint8_t inp = 0; // Input from DIO
-  
-  conv = conv >> 8;
+  conv = conv - 32768; 
+  conv = conv >> 12;
   
   /* Output the quantised signal*/
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, static_cast<GPIO_PinState>((conv >> 0) & 1));
@@ -66,7 +64,7 @@ void HAL_SDADC_ConvCpltCallback(SDADC_HandleTypeDef* hsdadc){
   inp |= (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) << 2);
   inp |= (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_8) << 3);
   
-  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, (inp * 17));
+  HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_8B_R, inp*16);
 }
 
 int main(void)
@@ -80,7 +78,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SDADC1_Init();
  
-  // HAL_SDADC_Start_IT(&hadc1);
   HAL_SDADC_Start_IT(&hsdadc1);
   
   // HAL_UART_Transmit(&huart2, &data, size, 1000);
@@ -211,7 +208,7 @@ static void MX_SDADC1_Init(void)
   hsdadc1.Init.IdleLowPowerMode = SDADC_LOWPOWER_NONE;
   hsdadc1.Init.FastConversionMode = SDADC_FAST_CONV_DISABLE;
   hsdadc1.Init.SlowClockMode = SDADC_SLOW_CLOCK_DISABLE;
-  hsdadc1.Init.ReferenceVoltage = SDADC_VREF_EXT;
+  hsdadc1.Init.ReferenceVoltage = SDADC_VREF_VDDA;
   
   if (HAL_SDADC_Init(&hsdadc1) != HAL_OK)
   {
@@ -220,7 +217,7 @@ static void MX_SDADC1_Init(void)
   
   /** Set parameters for SDADC configuration 0 Register 
   */
-  ConfParamStruct.InputMode = SDADC_INPUT_MODE_SE_OFFSET;
+  ConfParamStruct.InputMode = SDADC_INPUT_MODE_SE_ZERO_REFERENCE;
   ConfParamStruct.Gain = SDADC_GAIN_1;
   ConfParamStruct.CommonMode = SDADC_COMMON_MODE_VSSA;
   ConfParamStruct.Offset = 0;
@@ -229,6 +226,8 @@ static void MX_SDADC1_Init(void)
   {
     Error_Handler();
   }
+  HAL_SDADC_AssociateChannelConfig(&hsdadc1, SDADC_CHANNEL_4, SDADC_CONF_INDEX_0);
+  HAL_SDADC_ConfigChannel(&hsdadc1, SDADC_CHANNEL_4, SDADC_CONTINUOUS_CONV_ON);
 }
 
 /**

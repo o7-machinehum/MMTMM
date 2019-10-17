@@ -60,6 +60,7 @@
 extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
 extern TIM_HandleTypeDef htim2;
+extern SDADC_HandleTypeDef hsdadc1;
 
 /* USER CODE BEGIN EV */
 
@@ -170,6 +171,17 @@ void ADC1_IRQHandler(void)
 
   /* USER CODE END ADC1_IRQn 0 */
   HAL_ADC_IRQHandler(&hadc1);
+  /* USER CODE BEGIN ADC1_IRQn 1 */
+
+  /* USER CODE END ADC1_IRQn 1 */
+}
+
+void SDADC1_IRQHandler(void)
+{
+  /* USER CODE BEGIN ADC1_IRQn 0 */
+
+  /* USER CODE END ADC1_IRQn 0 */
+  HAL_SDADC_IRQHandler(&hsdadc1);
   /* USER CODE BEGIN ADC1_IRQn 1 */
 
   /* USER CODE END ADC1_IRQn 1 */
