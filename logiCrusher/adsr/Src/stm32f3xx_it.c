@@ -1,7 +1,6 @@
 #include "main.h"
 #include "stm32f3xx_it.h"
 #include "cmsis_os.h"
-
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
@@ -55,17 +54,6 @@ void DebugMon_Handler(void)
 /* please refer to the startup file (startup_stm32f3xx.s).                    */
 /******************************************************************************/
 
-/**
-  * @brief This function handles DMA1 channel1 global interrupt.
-  */
-void DMA1_Channel1_IRQHandler(void)
-{
-  HAL_DMA_IRQHandler(&hdma_adc1);
-}
-
-/**
-  * @brief This function handles TIM2 global interrupt.
-  */
 void TIM2_IRQHandler(void)
 {
   HAL_TIM_IRQHandler(&htim2);
@@ -74,11 +62,6 @@ void TIM2_IRQHandler(void)
 void USART2_IRQHandler(void)
 {
   HAL_UART_IRQHandler(&huart2);
-}
-
-void ADC1_IRQHandler(void)
-{
-  HAL_ADC_IRQHandler(&hadc1);
 }
 
 void SDADC1_IRQHandler(void)
