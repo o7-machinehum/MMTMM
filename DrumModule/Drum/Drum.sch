@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Drum-rescue:MIC5205-5.0YM5-Regulator_Linear-Drum-rescue U2
+L Drum-rescue:MIC5205-5.0YM5-Regulator_Linear-Drum-rescue-Drum-rescue U2
 U 1 1 5C78249B
 P 1650 2650
 F 0 "U2" H 1650 2992 50  0000 C CNN

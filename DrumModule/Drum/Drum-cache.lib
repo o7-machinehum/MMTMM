@@ -226,11 +226,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue
+# Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue-Drum-rescue
 #
-DEF Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue U 0 10 Y Y 1 F N
+DEF Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue-Drum-rescue U 0 10 Y Y 1 F N
 F0 "U" -150 225 50 H V C CNN
-F1 "Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue" 0 225 50 H V L CNN
+F1 "Drum-rescue_MIC5205-5.0YM5-Regulator_Linear-Drum-rescue-Drum-rescue" 0 225 50 H V L CNN
 F2 "Package_TO_SOT_SMD:SOT-23-5" 0 325 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
